@@ -1,14 +1,35 @@
-import requests
-from bs4 import BeautifulSoup
-import smtplib
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-from email.mime.base import MIMEBase
-from email import encoders
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 
-links = []
+driver = webdriver.Chrome()
+driver.get("www.python.org")
+assert "Python" in driver.title
+elem = driver.find_element_by_name("q")
+elem.clear()
+elem.send_keys("pycon")
+elem.send_keys(Keys.RETURN)
+assert "No results found." not in driver.page_source
+driver.close()
 
 
+
+
+
+
+
+
+
+#import requests
+#from bs4 import BeautifulSoup
+#import smtplib
+#from email.mime.multipart import MIMEMultipart
+#from email.mime.text import MIMEText
+#from email.mime.base import MIMEBase
+#from email import encoders
+
+#links = []
+
+'''
 def govDeals_Search(start_row, rowCount, query):
     query = query.replace("&", ",%20")
     print(query)
@@ -76,3 +97,5 @@ text = msg.as_string()
 server.sendmail(fromaddr, toaddr, text)
 server.quit()
 file.close()
+
+'''
