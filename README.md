@@ -23,3 +23,4 @@ path = cdi.install(file_directory='./lib/', verbose=True, chmod=True, overwrite=
 print('Installed chromedriver to path: %s' % path)`
 
 5. It is probably installed under a filepath like `C:\Users\your_name\PycharmProjects\Schedule-Generator\lib\chromedriver.exe` now, but it needs to be added to your system's PATH environment variable or moved to a location that is already in your path.
+6. You may have to restart before using webdriver in a script.
