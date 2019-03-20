@@ -164,8 +164,11 @@
             </Property>
           </Properties>
           <AccessibilityProperties>
-            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="GenerateOldButton"/>
+            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="" postCode="generateOldButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));"/>
           </AccessibilityProperties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="generateOldButtonActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

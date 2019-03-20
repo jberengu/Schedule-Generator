@@ -18,9 +18,10 @@ import javax.swing.border.Border;
 
 /**
  *
- * @author joseberenguel-araujo
+ * @authors Chris Rignham, Daniel Zamojda, and Jose Berenguel-Araujo
  */
 public class HomePage extends javax.swing.JFrame {
+    private String path;
     int width = (Toolkit.getDefaultToolkit().getScreenSize().width / 2) - 269;
     int height = (Toolkit.getDefaultToolkit().getScreenSize().height / 2) - 263;
     /**
@@ -84,6 +85,11 @@ public class HomePage extends javax.swing.JFrame {
         generateOldButton.setMaximumSize(new java.awt.Dimension(119, 29));
         generateOldButton.setMinimumSize(new java.awt.Dimension(119, 29));
         generateOldButton.setPreferredSize(new java.awt.Dimension(119, 29));
+        generateOldButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                generateOldButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -132,7 +138,8 @@ public class HomePage extends javax.swing.JFrame {
         uploadButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         generateButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         fileNameLabel.getAccessibleContext().setAccessibleName("fileNameLabel");
-        generateOldButton.getAccessibleContext().setAccessibleName("GenerateOldButton");
+        generateOldButton.getAccessibleContext().setAccessibleName("");
+        generateOldButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -153,7 +160,7 @@ public class HomePage extends javax.swing.JFrame {
         JFileChooser chooser = new JFileChooser();
         chooser.showOpenDialog(null);
         final File f = chooser.getSelectedFile();
-        String path = f.getAbsolutePath();
+        path = f.getAbsolutePath();
         String[] pathSplit = path.split("/");
         String file = pathSplit[pathSplit.length-1]; 
         if(path.compareToIgnoreCase("") != 0 && file.substring(file.length()-3).compareToIgnoreCase("csv") == 0){
@@ -193,6 +200,13 @@ public class HomePage extends javax.swing.JFrame {
         
 
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void generateOldButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateOldButtonActionPerformed
+        // TODO add your handling code here:
+        SchedulePage x = new SchedulePage(path);
+        x.setVisible(true);
+        super.dispose();
+    }//GEN-LAST:event_generateOldButtonActionPerformed
 
     /**
      * @param args the command line arguments
