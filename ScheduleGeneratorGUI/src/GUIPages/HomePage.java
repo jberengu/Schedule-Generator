@@ -40,15 +40,17 @@ public class HomePage extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
-        Title = new javax.swing.JLabel();
+        title = new javax.swing.JLabel();
         generateLabel = new javax.swing.JLabel();
         uploadLabel = new javax.swing.JLabel();
         uploadButton = new javax.swing.JButton();
         generateButton = new javax.swing.JButton();
+        fileNameLabel = new javax.swing.JLabel();
+        generateOldButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        Title.setText("CPSC Schedule Generator");
+        title.setText("CPSC Schedule Generator");
 
         generateLabel.setText("Generate New Schedule");
 
@@ -68,6 +70,18 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
 
+        fileNameLabel.setMaximumSize(new java.awt.Dimension(159, 16));
+        fileNameLabel.setMinimumSize(new java.awt.Dimension(159, 16));
+        fileNameLabel.setPreferredSize(new java.awt.Dimension(159, 16));
+        fileNameLabel.setSize(new java.awt.Dimension(159, 16));
+
+        generateOldButton.setText("Generate");
+        generateOldButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        generateOldButton.setEnabled(false);
+        generateOldButton.setMaximumSize(new java.awt.Dimension(119, 29));
+        generateOldButton.setMinimumSize(new java.awt.Dimension(119, 29));
+        generateOldButton.setPreferredSize(new java.awt.Dimension(119, 29));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -75,7 +89,7 @@ public class HomePage extends javax.swing.JFrame {
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(196, 196, 196))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(72, 72, 72)
@@ -83,16 +97,18 @@ public class HomePage extends javax.swing.JFrame {
                     .addComponent(generateLabel)
                     .addComponent(generateButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(fileNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(uploadButton)
-                    .addComponent(uploadLabel))
+                    .addComponent(uploadLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(generateOldButton, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(61, 61, 61))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(52, 52, 52)
@@ -103,11 +119,17 @@ public class HomePage extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(uploadButton)
                     .addComponent(generateButton))
-                .addGap(273, 273, 273))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(fileNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(generateOldButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(198, 198, 198))
         );
 
         uploadButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         generateButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        fileNameLabel.getAccessibleContext().setAccessibleName("fileNameLabel");
+        generateOldButton.getAccessibleContext().setAccessibleName("GenerateOldButton");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -129,7 +151,15 @@ public class HomePage extends javax.swing.JFrame {
         chooser.showOpenDialog(null);
         final File f = chooser.getSelectedFile();
         String path = f.getAbsolutePath();
-        
+        String[] pathSplit = path.split("/");
+        String file = pathSplit[pathSplit.length-1]; 
+        if(path.compareToIgnoreCase("") != 0 && file.substring(file.length()-3).compareToIgnoreCase("csv") == 0){
+            fileNameLabel.setText("Filename: "+file);
+            generateOldButton.setEnabled(true);
+        }else{
+            generateOldButton.setEnabled(false);
+            fileNameLabel.setText("Invalid File Type");
+        }
     }//GEN-LAST:event_uploadButtonActionPerformed
 
     private void generateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateButtonActionPerformed
@@ -174,11 +204,13 @@ public class HomePage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Title;
+    private javax.swing.JLabel fileNameLabel;
     private javax.swing.JButton generateButton;
     private javax.swing.JLabel generateLabel;
+    private javax.swing.JButton generateOldButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel title;
     private javax.swing.JButton uploadButton;
     private javax.swing.JLabel uploadLabel;
     // End of variables declaration//GEN-END:variables
