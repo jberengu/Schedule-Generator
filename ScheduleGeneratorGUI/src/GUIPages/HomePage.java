@@ -167,15 +167,27 @@ public class HomePage extends javax.swing.JFrame {
 
     private void generateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateButtonActionPerformed
         // TODO add your handling code here:
-        System.out.println("world");
+        
+        //Map<String, String> env = System.getenv();
+        //System.out.print(env);
+        //System.out.println("world");
         
         String s = "";
-        
+     
         try{  
-           ProcessBuilder pb = new ProcessBuilder("/Users/cranium/anaconda3/bin/python", "/Users/cranium/PycharmProjects/ScheduleGenerator/scraper.py");
-           Process p = pb.start();
+           Process p = Runtime.getRuntime().exec("python env.py");
+           BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
+           
+           String environment = new String(in.readLine());
+           System.out.println("value is : "+environment);
+           
+           
+           ProcessBuilder pb = new ProcessBuilder(environment, "scraper.py");
+           //ProcessBuilder pb = new ProcessBuilder("pythonscraper.py");
+
+           Process ps = pb.start();
            BufferedReader stdError = new BufferedReader(new 
-           InputStreamReader(p.getErrorStream()));
+           InputStreamReader(ps.getErrorStream()));
             
             // read any errors from the attempted command
            System.out.println("Here is the standard error of the command (if any):\n");
