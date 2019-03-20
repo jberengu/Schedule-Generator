@@ -1,9 +1,13 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package GUIPages;
+import java.io.*;
+import java.util.*;
 
 /**
  *
@@ -51,6 +55,11 @@ public class HomePage extends javax.swing.JFrame {
         });
 
         jButton2.setText("Generate New");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -107,6 +116,51 @@ public class HomePage extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        /*try{
+            String command = "python ~/ScheduleGenerator/scraper.py";
+            Process p = Runtime.getRuntime().exec(command);  
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+        */
+        String s = "";
+        
+        try{  
+           /*String scraper = "/Users/cranium/PycharmProjects/ScheduleGenerator/scraper.py";
+           //String pythonBin = "/Library/Frameworks/Python.framework/Versions/3.6/bin/python";
+           
+           ProcessBuilder pb = new ProcessBuilder(scraper);
+           //Process p = Runtime.getRuntime().exec(command); 
+           
+           Map<String, String> env = pb.environment();
+           env.put('')
+           
+           Process process = pb.start();
+           */
+           
+           //String[] cmds = { "/usr/bin/", "-c", "python /Users/cranium/PycharmProjects/ScheduleGenerator/scraper.py" };
+           //ProcessBuilder pb = new ProcessBuilder(cmds);
+           ProcessBuilder pb = new ProcessBuilder("/Users/cranium/anaconda3/bin/python", "/Users/cranium/PycharmProjects/ScheduleGenerator/scraper.py");
+           Process p = pb.start();
+           BufferedReader stdError = new BufferedReader(new 
+           InputStreamReader(p.getErrorStream()));
+            
+            // read any errors from the attempted command
+           System.out.println("Here is the standard error of the command (if any):\n");
+           while ((s = stdError.readLine()) != null) {
+               System.out.println(s);
+           }
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+        
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

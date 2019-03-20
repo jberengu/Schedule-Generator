@@ -4,10 +4,11 @@ from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup
 import pandas as pd
 
+chromedriver = '/usr/local/bin/chromedriver'
 chrome_options = Options()
 chrome_options.add_argument("--headless")
 
-driver = webdriver.Chrome(chrome_options=chrome_options)
+driver = webdriver.Chrome(chromedriver, chrome_options=chrome_options)
 driver.get("https://banner.umw.edu/prod/umw_clas.p_displayallnocount")
 
 assert "Select Term College" in driver.title
