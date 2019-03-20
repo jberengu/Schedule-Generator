@@ -6,20 +6,30 @@
  */
 
 package GUIPages;
+import java.awt.event.*;
+import java.awt.*;
+import java.awt.image.*;
 import java.io.*;
+import javax.imageio.*;
+import java.text.SimpleDateFormat;
 import java.util.*;
+import javax.swing.*;
+import javax.swing.border.Border;
 
 /**
  *
  * @author joseberenguel-araujo
  */
 public class HomePage extends javax.swing.JFrame {
-
+    int width = (Toolkit.getDefaultToolkit().getScreenSize().width / 2) - 269;
+    int height = (Toolkit.getDefaultToolkit().getScreenSize().height / 2) - 263;
     /**
      * Creates new form NewJFrame
      */
     public HomePage() {
         initComponents();
+        this.setTitle("Schedule Generator");
+        this.setLocation(width, height);
     }
 
     /**
@@ -33,33 +43,47 @@ public class HomePage extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        title = new javax.swing.JLabel();
+        generateLabel = new javax.swing.JLabel();
+        uploadLabel = new javax.swing.JLabel();
+        uploadButton = new javax.swing.JButton();
+        generateButton = new javax.swing.JButton();
+        fileNameLabel = new javax.swing.JLabel();
+        generateOldButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("CPSC Schedule Generator");
+        title.setText("CPSC Schedule Generator");
 
-        jLabel2.setText("Generate New Schedule");
+        generateLabel.setText("Generate New Schedule");
 
-        jLabel3.setText("Upload Existing Schedule");
+        uploadLabel.setText("Upload Existing Schedule");
 
-        jButton1.setText("Upload New");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        uploadButton.setText("Upload New");
+        uploadButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                uploadButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Generate New");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        generateButton.setText("Generate New");
+        generateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                generateButtonActionPerformed(evt);
             }
         });
+
+        fileNameLabel.setMaximumSize(new java.awt.Dimension(159, 16));
+        fileNameLabel.setMinimumSize(new java.awt.Dimension(159, 16));
+        fileNameLabel.setPreferredSize(new java.awt.Dimension(159, 16));
+        fileNameLabel.setSize(new java.awt.Dimension(159, 16));
+
+        generateOldButton.setText("Generate");
+        generateOldButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        generateOldButton.setEnabled(false);
+        generateOldButton.setMaximumSize(new java.awt.Dimension(119, 29));
+        generateOldButton.setMinimumSize(new java.awt.Dimension(119, 29));
+        generateOldButton.setPreferredSize(new java.awt.Dimension(119, 29));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -68,36 +92,47 @@ public class HomePage extends javax.swing.JFrame {
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(196, 196, 196))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(72, 72, 72)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jButton2))
+                    .addComponent(generateLabel)
+                    .addComponent(generateButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jLabel3))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(fileNameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(uploadButton)
+                    .addComponent(uploadLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(generateOldButton, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(61, 61, 61))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(52, 52, 52)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
+                    .addComponent(generateLabel)
+                    .addComponent(uploadLabel))
                 .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addGap(273, 273, 273))
+                    .addComponent(uploadButton)
+                    .addComponent(generateButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(fileNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(generateOldButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(198, 198, 198))
         );
+
+        uploadButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        generateButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        fileNameLabel.getAccessibleContext().setAccessibleName("fileNameLabel");
+        generateOldButton.getAccessibleContext().setAccessibleName("GenerateOldButton");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -113,37 +148,30 @@ public class HomePage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void uploadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        JFileChooser chooser = new JFileChooser();
+        chooser.showOpenDialog(null);
+        final File f = chooser.getSelectedFile();
+        String path = f.getAbsolutePath();
+        String[] pathSplit = path.split("/");
+        String file = pathSplit[pathSplit.length-1]; 
+        if(path.compareToIgnoreCase("") != 0 && file.substring(file.length()-3).compareToIgnoreCase("csv") == 0){
+            fileNameLabel.setText("Filename: "+file);
+            generateOldButton.setEnabled(true);
+        }else{
+            generateOldButton.setEnabled(false);
+            fileNameLabel.setText("Invalid File Type");
+        }
+    }//GEN-LAST:event_uploadButtonActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void generateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateButtonActionPerformed
         // TODO add your handling code here:
-        /*try{
-            String command = "python ~/ScheduleGenerator/scraper.py";
-            Process p = Runtime.getRuntime().exec(command);  
-        }
-        catch(Exception e){
-            System.out.println(e);
-        }
-        */
+        System.out.println("world");
+        
         String s = "";
         
         try{  
-           /*String scraper = "/Users/cranium/PycharmProjects/ScheduleGenerator/scraper.py";
-           //String pythonBin = "/Library/Frameworks/Python.framework/Versions/3.6/bin/python";
-           
-           ProcessBuilder pb = new ProcessBuilder(scraper);
-           //Process p = Runtime.getRuntime().exec(command); 
-           
-           Map<String, String> env = pb.environment();
-           env.put('')
-           
-           Process process = pb.start();
-           */
-           
-           //String[] cmds = { "/usr/bin/", "-c", "python /Users/cranium/PycharmProjects/ScheduleGenerator/scraper.py" };
-           //ProcessBuilder pb = new ProcessBuilder(cmds);
            ProcessBuilder pb = new ProcessBuilder("/Users/cranium/anaconda3/bin/python", "/Users/cranium/PycharmProjects/ScheduleGenerator/scraper.py");
            Process p = pb.start();
            BufferedReader stdError = new BufferedReader(new 
@@ -158,8 +186,12 @@ public class HomePage extends javax.swing.JFrame {
         catch(Exception e){
             System.out.println(e);
         }
+    }//GEN-LAST:event_generateButtonActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
         
-        
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -199,12 +231,14 @@ public class HomePage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel fileNameLabel;
+    private javax.swing.JButton generateButton;
+    private javax.swing.JLabel generateLabel;
+    private javax.swing.JButton generateOldButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel title;
+    private javax.swing.JButton uploadButton;
+    private javax.swing.JLabel uploadLabel;
     // End of variables declaration//GEN-END:variables
 }
