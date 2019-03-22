@@ -196,7 +196,7 @@ public class HomePage extends javax.swing.JFrame {
            System.out.println("value is : "+environment);
            
            
-           ProcessBuilder pb = new ProcessBuilder(python, "scraper.py");
+           ProcessBuilder pb = new ProcessBuilder(environment, "scraper.py");
            //ProcessBuilder pb = new ProcessBuilder("pythonscraper.py");
 
            Process ps = pb.start();
