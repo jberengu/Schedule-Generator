@@ -175,14 +175,21 @@ public class HomePage extends javax.swing.JFrame {
     private void generateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateButtonActionPerformed
         // TODO add your handling code here:
         
-        //Map<String, String> env = System.getenv();
-        //System.out.print(env);
+        Map<String, String> env = System.getenv();
+        System.out.print(env);
         //System.out.println("world");
         
         String s = "";
      
-        try{  
-           Process p = Runtime.getRuntime().exec("python env.py");
+        try{
+           String python = ""; 
+           if (env.get("USER").equals("cranium")){
+               python = "/Users/cranium/anaconda3/bin/python";
+           }
+           else{
+               python = "python";
+           }
+           Process p = Runtime.getRuntime().exec(python + " env.py");
            BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
            
            String environment = new String(in.readLine());
