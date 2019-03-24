@@ -1,0 +1,54 @@
+body {
+	font-family: sans-serif;
+	color: rgb(50, 50, 50);
+}
+
+.header {
+	width: 100%;
+	height: 200px;
+	line-height: 200px;
+	background-color: darkslategrey;
+	color: white;
+}
+
+.header a {
+	color: white;
+	text-decoration: none;
+}
+
+.header h1 {
+	font-size: 80px;
+	text-align: center;
+}
+
+.homepage-content {
+	width: 100%;
+	margin-top: 125px;
+}
+
+.homepage-content hr{
+	float: left;
+    border: none;
+    border-left: 1px solid gainsboro;
+    height: 30vh;
+    width: 1px;
+}
+
+.half-box {
+	float: left;
+	width: 49.5%;
+	text-align: center;
+}
+
+.button {
+	color: white;
+	padding: 15px 40px;
+	background-color: darkslategrey;
+	text-decoration: none;
+	transition-duration: 0.3s;
+}
+
+.button:hover {
+	opacity: 0.75;
+	color: rgb(50, 50, 50);
+}
