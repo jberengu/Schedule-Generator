@@ -33,6 +33,7 @@ const createWindow = () => {
 
 const {spawn} = require('child_process')
 const path = require('path');
+const subprocess = runScript()
 /**
  * Run python script, pass in `-u` to not buffer console output 
  * @return {ChildProcess}
@@ -43,8 +44,6 @@ function runScript(){
     path.join(__dirname, '../..', 'scraper.py')
   ]);
 }
-
-const subprocess = runScript()
 
 // print output of script
 subprocess.stdout.on('data', (data) => {
