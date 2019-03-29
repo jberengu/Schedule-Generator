@@ -12,13 +12,30 @@
     <div class="homepage-content">
     	<div class="half-box">
     		<h1>Generate a New Department Schedule</h1>
-    		<a class="button" href="schedule.html">Generate New</a>
+    		<a id="Generate_New" class="button">Generate New</a>
     	</div>
     	<hr>
     	<div class="half-box">
     		<h1>Upload an Existing Schedule</h1>
-    		<a class="button" href="#">Upload Existing</a>
+    		<a id="Upload_Existing" class="button" href="#">Upload Existing</a>
     	</div>
     </div>
+    <script>
+        $('#Generate_New').click(function(){
+           $.ajax({
+                type:'get',
+                url:'/Users/cranium/PycharmProjects/ScheduleGenerator/scraper.py',
+                cache:false,
+                async:asynchronous
+                //success: function(data) {
+                //  <put your custom validation here using the response from data structure >
+                //},
+                //error: function(request, status, error) {
+                //  <put your custom code here to handle the call failure>
+                //}
+             });
+          });
+
+   </script>
   </body>
 </html>

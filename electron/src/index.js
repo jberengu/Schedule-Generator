@@ -31,6 +31,33 @@ const createWindow = () => {
   });
 };
 
+const {spawn} = require('child_process')
+const path = require('path');
+/**
+ * Run python script, pass in `-u` to not buffer console output 
+ * @return {ChildProcess}
+ */
+function runScript(){
+  return spawn('python', [
+    "-u", 
+    path.join(__dirname, '../..', 'scraper.py')
+  ]);
+}
+
+const subprocess = runScript()
+
+// print output of script
+subprocess.stdout.on('data', (data) => {
+  console.log(`data:${data}`);
+});
+subprocess.stderr.on('data', (data) => {
+  console.log(`error:${data}`);
+});
+subprocess.stderr.on('close', () => {
+  console.log("Closed");
+});
+
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
@@ -52,6 +79,8 @@ app.on('activate', () => {
     createWindow();
   }
 });
+
+
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
