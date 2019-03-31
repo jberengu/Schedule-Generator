@@ -20,21 +20,26 @@
     		<a id="Upload_Existing" class="button" href="#">Upload Existing</a>
     	</div>
     </div>
+    <script>window.$ = window.jQuery = require('jquery');</script>
     <script>
         $('#Generate_New').click(function(){
-           $.ajax({
-                type:'get',
-                url:'/Users/cranium/PycharmProjects/ScheduleGenerator/scraper.py',
-                cache:false,
-                async:asynchronous
-                //success: function(data) {
-                //  <put your custom validation here using the response from data structure >
-                //},
-                //error: function(request, status, error) {
-                //  <put your custom code here to handle the call failure>
-                //}
-             });
-          });
+            const {spawn} = require('child_process')
+            //const ProgressBar = require('electron-progressbar')
+            const path = require('path');
+            const subprocess = spawn('python', ["-u", path.join(__dirname, '../..', 'scraper.py')]);
+
+            subprocess.stdout.on('data', (data) => {
+              alert(`${data}`);
+            });
+            subprocess.stderr.on('data', (data) => {
+              alert(`error:${data}`);
+            });
+            subprocess.stderr.on('close', () => {
+              alert("Done!");
+              location = 'schedule.html';
+        });
+        
+    });
 
    </script>
   </body>
