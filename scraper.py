@@ -11,12 +11,18 @@ chrome_options.add_argument("--headless")
 driver = webdriver.Chrome(chromedriver, chrome_options=chrome_options)
 driver.get("https://banner.umw.edu/prod/umw_clas.p_displayallnocount")
 
+print("Connecting to Banner...")
+
 assert "Select Term College" in driver.title
 elem = driver.find_element_by_id("id____UID0")
 elem.send_keys(Keys.RETURN)
 
+print("Scraping Banner for the relevant courses...")
+
 soup = BeautifulSoup(driver.page_source, 'lxml')
 table = soup.find_all('table', {'class':'datadisplaytable'})[0]
+
+print("Returning with the completed data set...")
 
 df = pd.read_html(str(table), header=0)
 df = df[0]

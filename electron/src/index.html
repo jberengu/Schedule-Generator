@@ -12,19 +12,40 @@
     <div class="homepage-content">
     	<div class="half-box">
     		<h1>Generate a New Department Schedule</h1>
-    		<a class="button" href="schedule.html">Generate New</a>
+    		<a id="Generate_New" class="button">Generate New</a>
     	</div>
     	<hr>
     	<div class="half-box">
     		<h1>Upload an Existing Schedule</h1>
-    		<a class="button" href="#">Upload Existing</a>
+    		<a id="Upload_Existing" class="button" href="#">Upload Existing</a>
     	</div>
     </div>
     <br>
     <div>
       <input type="button" value="Connect to mysql" id="btn"/>
     </div>
-  </body>
+    <script>window.$ = window.jQuery = require('jquery');</script>
+    <script>
+        $('#Generate_New').click(function(){
+            const {spawn} = require('child_process')
+            //const ProgressBar = require('electron-progressbar')
+            const path = require('path');
+            const subprocess = spawn('python', ["-u", path.join(__dirname, '../..', 'scraper.py')]);
+
+            subprocess.stdout.on('data', (data) => {
+              alert(`${data}`);
+            });
+            subprocess.stderr.on('data', (data) => {
+              alert(`error:${data}`);
+            });
+            subprocess.stderr.on('close', () => {
+              alert("Done!");
+              location = 'schedule.html';
+        });
+        
+    });
+
+   </script>
   <script>
     document.getElementById("btn").addEventListener("click",() => {
       var mysql = require("mysql");
@@ -48,7 +69,7 @@
       var queryString4= 'use scheduleDB';
       var queryString5= 'source schedules.csv;'
       var queryString6= 'show tables;'
-      var queryString7= 'create table scheduleCSV(id INT NOT NULL, CRN INT, Course VARCHAR(255),Sec INT,Title VARCHAR(255),POI VARCHAR(255),CO VARCHAR(255),PRE VARCHAR(255),ATR VARCHAR(255),WL VARCHAR(255),CR VARCHAR(255),TIME VARCHAR(255),Days VARCHAR(255),Campus VARCHAR(255),Bldgs VARCHAR(255),Rooms VARCHAR(255),Instructors VARCHAR(255),Additional_Requirements VARCHAR(255) PRIMARY KEY(id));'
+      var queryString7= 'create table scheduleCSV(id INT NOT NULL, CRN INT, Course VARCHAR(255),Sec INT,Title VARCHAR(255),POI VARCHAR(255),CO VARCHAR(255),PRE VARCHAR(255),ATR VARCHAR(255),WL VARCHAR(255),CR VARCHAR(255),TIME VARCHAR(255),Days VARCHAR(255),Campus VARCHAR(255),Bldgs VARCHAR(255),Rooms VARCHAR(255),Instructors VARCHAR(255),Additional_Requirements VARCHAR(255), PRIMARY KEY(id));'
       var queryString8= 'LOAD DATA LOCAL INFILE \'./schedules.csv\' INTO TABLE scheduleCSV FIELDS TERMINATED BY \',\' ENCLOSED BY \'\"\' LINES TERMINATED BY \'\\n\' IGNORE 1 ROWS (id,CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldgs,Rooms,Instructors,Additional_Requirements);'
       var queryString9= 'drop table if exists scheduleCSV;'
       var queryString10= 'select * from scheduleCSV;'
@@ -116,6 +137,7 @@
       });
     }, false);
   </script>
+</body>
 </html>
 
 
