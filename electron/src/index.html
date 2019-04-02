@@ -20,5 +20,107 @@
     		<a class="button" href="#">Upload Existing</a>
     	</div>
     </div>
+    <br>
+    <div>
+      <input type="button" value="Connect to mysql" id="btn"/>
+    </div>
   </body>
+  <script>
+    document.getElementById("btn").addEventListener("click",() => {
+      var mysql = require("mysql");
+
+      var connection = mysql.createConnection({
+        host: "localhost",
+        user: "root",
+        password: ""
+      });
+
+      connection.connect((err) => {
+        if (err){
+          return console.log(err.stack);
+        }
+        console.log("Connection succesful");
+      });
+
+      var queryString1= 'show databases;';
+      var queryString2= 'create database if not exists scheduleDB;';
+      var queryString3= 'drop database if exists scheduleDB;'
+      var queryString4= 'use scheduleDB';
+      var queryString5= 'source schedules.csv;'
+      var queryString6= 'show tables;'
+      var queryString7= 'create table scheduleCSV(id INT NOT NULL, CRN INT, Course VARCHAR(255),Sec INT,Title VARCHAR(255),POI VARCHAR(255),CO VARCHAR(255),PRE VARCHAR(255),ATR VARCHAR(255),WL VARCHAR(255),CR VARCHAR(255),TIME VARCHAR(255),Days VARCHAR(255),Campus VARCHAR(255),Bldgs VARCHAR(255),Rooms VARCHAR(255),Instructors VARCHAR(255),Additional_Requirements VARCHAR(255) PRIMARY KEY(id));'
+      var queryString8= 'LOAD DATA LOCAL INFILE \'./schedules.csv\' INTO TABLE scheduleCSV FIELDS TERMINATED BY \',\' ENCLOSED BY \'\"\' LINES TERMINATED BY \'\\n\' IGNORE 1 ROWS (id,CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldgs,Rooms,Instructors,Additional_Requirements);'
+      var queryString9= 'drop table if exists scheduleCSV;'
+      var queryString10= 'select * from scheduleCSV;'
+      var queryString11= 'create table if not exists professorData (id int NOT NULL AUTO_INCREMENT, name varchar(255), phone varchar(225), office varchar(255), M varchar(255),T varchar(255),W varchar(255),R varchar(255),F varchar(255), PRIMARY KEY(id));'
+
+
+      connection.query(queryString3, (err, rows, fields) => {
+        if(err){
+          return console.log("An error with the querry", err);
+        }
+
+        console.log(rows);
+      });
+
+      connection.query(queryString2, (err, rows, fields) => {
+        if(err){
+          return console.log("An error with the querry", err);
+        }
+
+        console.log(rows);
+      });
+
+      connection.query(queryString4, (err, rows, fields) => {
+        if(err){
+          return console.log("An error with the querry", err);
+        }
+
+        console.log(rows);
+      });
+
+      connection.query(queryString9, (err, rows, fields) => {
+        if(err){
+          return console.log("An error with the querry", err);
+        }
+
+        console.log(rows);
+      });
+
+      connection.query(queryString7, (err, rows, fields) => {
+        if(err){
+          return console.log("An error with the querry", err);
+        }
+
+        console.log(rows);
+      });
+
+      connection.query(queryString8, (err, rows, fields) => {
+        if(err){
+          return console.log("An error with the querry", err);
+        }
+
+        console.log(rows);
+      });
+
+      connection.query(queryString10, (err, rows, fields) => {
+        if(err){
+          return console.log("An error with the querry", err);
+        }
+
+        console.log(rows);
+      });
+
+      connection.end(() => {
+        console.log("Connection succesfully closed");
+      });
+    }, false);
+  </script>
 </html>
+
+
+
+
+
+
+
