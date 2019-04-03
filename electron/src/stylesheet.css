@@ -59,6 +59,7 @@ h1 {
 
 .icon {
 	vertical-align: middle;
+	margin: 5px;
 }
 
 .icon:hover {
