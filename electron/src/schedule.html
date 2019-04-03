@@ -2,26 +2,80 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Schedule Generator</title>
+    <title>CPSC Department Schedule Generator</title>
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
   </head>
   <body>
-    <script src="main.js"></script>
     <div class="header">
-      <h1><a href="index.html">Schedule Generator</a></h1>
+      <h1><a href="index.html">CPSC Department Schedule Generator</a></h1>
     </div>
-    <div class="table100 ver5 m-b-110">
-      <table data-vertable="ver5">
+    <div>
+      <table>
         <thead>
-          <tr class="row100 head">
-            <th class="column100 column1" data-column="column1">Instructors</th>
-            <th class="column100 column2" data-column="column2">Course(s)</th>
-            <th class="column100 column3" data-column="column3">Times/Days of Classes</th>
-            <th class="column100 column4" data-column="column4">Tm. No.</th>
-            <th class="column100 column5" data-column="column5">Office Hours</th>
+          <tr>
+            <th rowspan="2" scope="col">Instructors</th>
+            <th colspan="5" scope="colgroup">Office Hours</th>
+            <th rowspan="2" scope="col">Course(s)</th>
+            <th rowspan="2" scope="col">Times/Days of Classes</th>
+            <th rowspan="2" scope="col">Rm. No.</th>
+          </tr>
+          <tr>
+            <th scope="col">M</th>
+            <th scope="col">T</th>
+            <th scope="col">W</th>
+            <th scope="col">Th</th>
+            <th scope="col">F</th>
           </tr>
         </thead>
         <tbody>
+          <tr>
+            <td rowspan="4">Ian Finlayson</td>
+            <td rowspan="4">12 - 2</td>
+            <td rowspan="4"></td>
+            <td rowspan="4">3 - 4</td>
+            <td rowspan="4">12 - 2</td>
+            <td rowspan="4"></td>
+          </tr>
+          <tr>
+            <td>CPSC 414</td>
+            <td>11am - 12pm MW</td>
+            <td>Trinkle B16</td>
+          </tr>
+          <tr>
+            <td>CPSC 110</td>
+            <td>9:30am - 11am TR</td>
+            <td>Monroe 112</td>
+          </tr>
+          <tr>
+            <td>CPSC 240</td>
+            <td>2pm - 3pm MWF</td>
+            <td>Trinkle B6</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td rowspan="4">Ian Finlayson</td>
+            <td rowspan="4">12 - 2</td>
+            <td rowspan="4"></td>
+            <td rowspan="4">3 - 4</td>
+            <td rowspan="4">12 - 2</td>
+            <td rowspan="4"></td>
+          </tr>
+          <tr>
+            <td>CPSC 414</td>
+            <td>11am - 12pm MW</td>
+            <td>Trinkle B16</td>
+          </tr>
+          <tr>
+            <td>CPSC 110</td>
+            <td>9:30am - 11am TR</td>
+            <td>Monroe 112</td>
+          </tr>
+          <tr>
+            <td>CPSC 240</td>
+            <td>2pm - 3pm MWF</td>
+            <td>Trinkle B6</td>
+          </tr>
         </tbody>
       </table>
     </div>
