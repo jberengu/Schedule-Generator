@@ -27,30 +27,32 @@
     </div>
     <script>window.$ = window.jQuery = require('jquery');</script>
     <script>
-
-      
         $('#Generate_New').click(function(){ 
-
           const puppeteer = require('puppeteer');
           const cheerio = require("cheerio");
           const tableToCSV = require('node-table-to-csv');
 
+
           (async () => {
+            //Open up the browser and go to the correct page
             const browser = await puppeteer.launch();
             const page = await browser.newPage();
-
             await page.goto('https://banner.umw.edu/prod/umw_clas.p_displayallnocount');
 
+            //Click on the submit button
             const [response] = await Promise.all([
               page.click('#id____UID0',{'delay' : 50}),
               page.waitForNavigation({'delay': 250})
             ]);
 
+            //Wait for page to be ready and load the data into cheerio
             const html = await page.content()
             const $ = cheerio.load(html, {'normalizeWhitespace': true})
             
+            //Put the table into a csv format
             const csv = tableToCSV($('.datadisplaytable')[0])
 
+            //Save the csv file
             var fs = require('fs');
             fs.writeFile('schedule.csv', csv, function (err) {
               if (err) {
@@ -59,8 +61,25 @@
             console.log("The file was saved!");
             });
             
+            //Close the browser
             await browser.close();
+            location = 'schedule.html';
           })();
+        
+        /*
+          const csv = require("csv-parser")
+          const fs = require('fs')
+          const results = [];
+
+        
+          fs.createReadStream('schedule.csv')
+            .pipe(csv())
+            .on('data', (data) => results.push(data))
+            .on('end', () => {
+              console.log(results);
+            });
+          */
+
     });
 
    </script>
