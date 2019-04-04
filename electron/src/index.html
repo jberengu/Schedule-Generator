@@ -26,23 +26,40 @@
     </div>
     <script>window.$ = window.jQuery = require('jquery');</script>
     <script>
-        $('#Generate_New').click(function(){
-            const {spawn} = require('child_process')
-            //const ProgressBar = require('electron-progressbar')
-            const path = require('path');
-            const subprocess = spawn('python', ["-u", path.join(__dirname, '../..', 'scraper.py')]);
 
-            subprocess.stdout.on('data', (data) => {
-              alert(`${data}`);
+      
+        $('#Generate_New').click(function(){ 
+
+          const puppeteer = require('puppeteer');
+          const cheerio = require("cheerio");
+          const tableToCSV = require('node-table-to-csv');
+
+          (async () => {
+            const browser = await puppeteer.launch();
+            const page = await browser.newPage();
+
+            await page.goto('https://banner.umw.edu/prod/umw_clas.p_displayallnocount');
+
+            const [response] = await Promise.all([
+              page.click('#id____UID0',{'delay' : 50}),
+              page.waitForNavigation({'delay': 250})
+            ]);
+
+            const html = await page.content()
+            const $ = cheerio.load(html, {'normalizeWhitespace': true})
+            
+            const csv = tableToCSV($('.datadisplaytable')[0])
+
+            var fs = require('fs');
+            fs.writeFile('schedule.csv', csv, function (err) {
+              if (err) {
+                  return console.log(err);
+              }
+            console.log("The file was saved!");
             });
-            subprocess.stderr.on('data', (data) => {
-              alert(`error:${data}`);
-            });
-            subprocess.stderr.on('close', () => {
-              alert("Done!");
-              location = 'schedule.html';
-        });
-        
+            
+            await browser.close();
+          })();
     });
 
    </script>
