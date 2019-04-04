@@ -73,7 +73,7 @@
       var queryString8= 'LOAD DATA LOCAL INFILE \'./schedules.csv\' INTO TABLE scheduleCSV FIELDS TERMINATED BY \',\' ENCLOSED BY \'\"\' LINES TERMINATED BY \'\\n\' IGNORE 1 ROWS (id,CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldgs,Rooms,Instructors,Additional_Requirements);'
       var queryString9= 'drop table if exists scheduleCSV;'
       var queryString10= 'select * from scheduleCSV;'
-      var queryString11= 'create table if not exists professorData (id int NOT NULL AUTO_INCREMENT, name varchar(255), phone varchar(225), office varchar(255), M varchar(255),T varchar(255),W varchar(255),R varchar(255),F varchar(255), PRIMARY KEY(id));'
+      var queryString11= 'create table if not exists professorData (id int NOT NULL AUTO_INCREMENT, name varchar(255), phone varchar(225), office varchar(255), PRIMARY KEY(id));'
 
 
       connection.query(queryString3, (err, rows, fields) => {
