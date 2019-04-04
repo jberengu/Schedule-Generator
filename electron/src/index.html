@@ -27,23 +27,40 @@
     </div>
     <script>window.$ = window.jQuery = require('jquery');</script>
     <script>
-        $('#Generate_New').click(function(){
-            const {spawn} = require('child_process')
-            //const ProgressBar = require('electron-progressbar')
-            const path = require('path');
-            const subprocess = spawn('python', ["-u", path.join(__dirname, '../..', 'scraper.py')]);
 
-            subprocess.stdout.on('data', (data) => {
-              alert(`${data}`);
+      
+        $('#Generate_New').click(function(){ 
+
+          const puppeteer = require('puppeteer');
+          const cheerio = require("cheerio");
+          const tableToCSV = require('node-table-to-csv');
+
+          (async () => {
+            const browser = await puppeteer.launch();
+            const page = await browser.newPage();
+
+            await page.goto('https://banner.umw.edu/prod/umw_clas.p_displayallnocount');
+
+            const [response] = await Promise.all([
+              page.click('#id____UID0',{'delay' : 50}),
+              page.waitForNavigation({'delay': 250})
+            ]);
+
+            const html = await page.content()
+            const $ = cheerio.load(html, {'normalizeWhitespace': true})
+            
+            const csv = tableToCSV($('.datadisplaytable')[0])
+
+            var fs = require('fs');
+            fs.writeFile('schedule.csv', csv, function (err) {
+              if (err) {
+                  return console.log(err);
+              }
+            console.log("The file was saved!");
             });
-            subprocess.stderr.on('data', (data) => {
-              alert(`error:${data}`);
-            });
-            subprocess.stderr.on('close', () => {
-              alert("Done!");
-              location = 'schedule.html';
-        });
-        
+            
+            await browser.close();
+          })();
     });
 
    </script>
@@ -70,8 +87,9 @@
       var queryString4= 'use scheduleDB';
       var queryString5= 'source schedules.csv;'
       var queryString6= 'show tables;'
-      var queryString7= 'create table scheduleCSV(id INT NOT NULL, CRN INT, Course VARCHAR(255),Sec INT,Title VARCHAR(255),POI VARCHAR(255),CO VARCHAR(255),PRE VARCHAR(255),ATR VARCHAR(255),WL VARCHAR(255),CR VARCHAR(255),TIME VARCHAR(255),Days VARCHAR(255),Campus VARCHAR(255),Bldgs VARCHAR(255),Rooms VARCHAR(255),Instructors VARCHAR(255),Additional_Requirements VARCHAR(255), PRIMARY KEY(id));'
-      var queryString8= 'LOAD DATA LOCAL INFILE \'./schedules.csv\' INTO TABLE scheduleCSV FIELDS TERMINATED BY \',\' ENCLOSED BY \'\"\' LINES TERMINATED BY \'\\n\' IGNORE 1 ROWS (id,CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldgs,Rooms,Instructors,Additional_Requirements);'
+      //CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instructor/s,Additional Requirements
+      var queryString7= 'create table scheduleCSV(CRN INT, Course VARCHAR(255),Sec INT,Title VARCHAR(255),POI VARCHAR(255),CO VARCHAR(255),PRE VARCHAR(255),ATR VARCHAR(255),WL VARCHAR(255),CR VARCHAR(255),TIME VARCHAR(255),Days VARCHAR(255),Campus VARCHAR(255),Bldgs VARCHAR(255),Rooms VARCHAR(255),Instructors VARCHAR(255),Additional_Requirements VARCHAR(255), PRIMARY KEY(CRN));'
+      var queryString8= 'LOAD DATA LOCAL INFILE \'./schedule.csv\' INTO TABLE scheduleCSV FIELDS TERMINATED BY \',\' ENCLOSED BY \'\"\' LINES TERMINATED BY \'\\n\' IGNORE 1 ROWS (CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldgs,Rooms,Instructors,Additional_Requirements);'
       var queryString9= 'drop table if exists scheduleCSV;'
       var queryString10= 'select * from scheduleCSV;'
       var queryString11= 'create table if not exists professorData (id int NOT NULL AUTO_INCREMENT, name varchar(255), phone varchar(225), office varchar(255), PRIMARY KEY(id));'
@@ -126,6 +144,13 @@
       });
 
       connection.query(queryString10, (err, rows, fields) => {
+        if(err){
+          return console.log("An error with the querry", err);
+        }
+
+        console.log(rows);
+      });
+      connection.query(queryString11, (err, rows, fields) => {
         if(err){
           return console.log("An error with the querry", err);
         }
