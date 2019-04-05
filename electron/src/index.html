@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>CPSC Department Schedule Generator</title>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  </head>
-  <body>
-  	<div class="header">
-		<h1><a href="index.html">CPSC Department Schedule Generator</a></h1>
-	</div>
-    <div class="homepage-content">
-    	<div class="half-box">
-    		<a id="Generate_New" class="button">Generate New</a>
-    	</div>
-    	<hr>
-    	<div class="half-box">
-    		<a id="Upload_Existing" class="button" href="#">Upload Existing</a>
-    	</div>
-    </div>
-    <br>
-    <div>
-      <input type="button" value="Connect to mysql" id="btn"/>
-    </div>
-    <div>
-      <a href="schedule.html">Sched Page</a>
-    </div>
-    <script>window.$ = window.jQuery = require('jquery');</script>
-    <script>
-        $('#Generate_New').click(function(){ 
-          const puppeteer = require('puppeteer');
-          const cheerio = require("cheerio");
-          const tableToCSV = require('node-table-to-csv');
+<head>
+  <meta charset="utf-8">
+  <title>CPSC Department Schedule Generator</title>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+<body>
+ <div class="header">
+  <h1><a href="index.html">CPSC Department Schedule Generator</a></h1>
+</div>
+<div class="homepage-content">
+ <div class="half-box">
+  <a id="Generate_New" class="button">Generate New</a>
+</div>
+<hr>
+<div class="half-box">
+  <a id="Upload_Existing" class="button" href="#">Upload Existing</a>
+</div>
+</div>
+<br>
+<div>
+  <input type="button" value="Connect to mysql" id="btn"/>
+</div>
+<div>
+  <a href="schedule.html">Sched Page</a>
+</div>
+<script>window.$ = window.jQuery = require('jquery');</script>
+<script>
+  $('#Generate_New').click(function(){ 
+    const puppeteer = require('puppeteer');
+    const cheerio = require("cheerio");
+    const tableToCSV = require('node-table-to-csv');
 
 
-          (async () => {
+    (async () => {
             //Open up the browser and go to the correct page
             const browser = await puppeteer.launch();
             const page = await browser.newPage();
@@ -43,7 +43,7 @@
             const [response] = await Promise.all([
               page.click('#id____UID0',{'delay' : 50}),
               page.waitForNavigation({'delay': 250})
-            ]);
+              ]);
 
             //Wait for page to be ready and load the data into cheerio
             const html = await page.content()
@@ -56,16 +56,16 @@
             var fs = require('fs');
             fs.writeFile('schedule.csv', csv, function (err) {
               if (err) {
-                  return console.log(err);
+                return console.log(err);
               }
-            console.log("The file was saved!");
+              console.log("The file was saved!");
             });
             
             //Close the browser
             await browser.close();
             location = 'schedule.html';
           })();
-        
+          
         /*
           const csv = require("csv-parser")
           const fs = require('fs')
@@ -78,34 +78,34 @@
             .on('end', () => {
               console.log(results);
             });
-          */
+            */
 
-    });
+          });
 
-   </script>
-  <script>
-    document.getElementById("btn").addEventListener("click",() => {
-      var mysql = require("mysql");
+        </script>
+        <script>
+          document.getElementById("btn").addEventListener("click",() => {
+            var mysql = require("mysql");
 
-      var connection = mysql.createConnection({
-        host: "localhost",
-        user: "root",
-        password: ""
-      });
+            var connection = mysql.createConnection({
+              host: "localhost",
+              user: "root",
+              password: ""
+            });
 
-      connection.connect((err) => {
-        if (err){
-          return console.log(err.stack);
-        }
-        console.log("Connection succesful");
-      });
+            connection.connect((err) => {
+              if (err){
+                return console.log(err.stack);
+              }
+              console.log("Connection succesful");
+            });
 
-      var queryString1= 'show databases;';
-      var queryString2= 'create database if not exists scheduleDB;';
-      var queryString3= 'drop database if exists scheduleDB;'
-      var queryString4= 'use scheduleDB';
-      var queryString5= 'source schedules.csv;'
-      var queryString6= 'show tables;'
+            var queryString1= 'show databases;';
+            var queryString2= 'create database if not exists scheduleDB;';
+            var queryString3= 'drop database if exists scheduleDB;'
+            var queryString4= 'use scheduleDB';
+            var queryString5= 'source schedules.csv;'
+            var queryString6= 'show tables;'
       //CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instructor/s,Additional Requirements
       var queryString7= 'create table scheduleCSV(CRN INT, Course VARCHAR(255),Sec INT,Title VARCHAR(255),POI VARCHAR(255),CO VARCHAR(255),PRE VARCHAR(255),ATR VARCHAR(255),WL VARCHAR(255),CR VARCHAR(255),TIME VARCHAR(255),Days VARCHAR(255),Campus VARCHAR(255),Bldgs VARCHAR(255),Rooms VARCHAR(255),Instructors VARCHAR(255),Additional_Requirements VARCHAR(255), PRIMARY KEY(CRN));'
       var queryString8= 'LOAD DATA LOCAL INFILE \'./schedule.csv\' INTO TABLE scheduleCSV FIELDS TERMINATED BY \',\' ENCLOSED BY \'\"\' LINES TERMINATED BY \'\\n\' IGNORE 1 ROWS (CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldgs,Rooms,Instructors,Additional_Requirements);'
