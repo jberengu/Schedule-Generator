@@ -64,6 +64,7 @@
               password: ""
             });
 
+            //connects to database
             connection.connect((err) => {
               if (err){
                 return console.log(err.stack);
@@ -79,6 +80,7 @@
             var queryString6= 'create table if not exists professorData (id int NOT NULL AUTO_INCREMENT, name varchar(255), phone varchar(225), office varchar(255), PRIMARY KEY(id));'
             var queryString7= 'select * from scheduleCSV;'
 
+            //creates database if it does not already exist
             connection.query(queryString1, (err, rows, fields) => {
               if(err){
                 return console.log("An error with the querry", err);
@@ -87,6 +89,7 @@
               console.log(rows);
             });
 
+            //moves into correct database
             connection.query(queryString2, (err, rows, fields) => {
               if(err){
                 return console.log("An error with the querry", err);
@@ -95,6 +98,7 @@
               console.log(rows);
             });
 
+            //drops old scheduleCSV table to make room for new information
             connection.query(queryString3, (err, rows, fields) => {
               if(err){
                 return console.log("An error with the querry", err);
@@ -103,6 +107,7 @@
               console.log(rows);
             });
 
+            //creates new scheduleCVS table
             connection.query(queryString4, (err, rows, fields) => {
               if(err){
                 return console.log("An error with the querry", err);
@@ -111,6 +116,7 @@
               console.log(rows);
             });
 
+            //loads site data into database
             connection.query(queryString5, (err, rows, fields) => {
               if(err){
                 return console.log("An error with the querry", err);
@@ -119,6 +125,7 @@
               console.log(rows);
             });
 
+            //creates professor table if not already existed
             connection.query(queryString6, (err, rows, fields) => {
               if(err){
                 return console.log("An error with the querry", err);
@@ -130,6 +137,9 @@
             connection.end(() => {
               console.log("Connection succesfully closed");
             });
+
+            //change to schedule page
+            location = 'schedule.html';
           })();
     });
    </script>
