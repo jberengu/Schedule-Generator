@@ -11,7 +11,7 @@
   </div>
     <div class="homepage-content">
       <div class="half-box">
-        <a id="Generate_New" class="button">Generate New</a>
+        <a id="Generate_New" class="button" >Generate New</a>
       </div>
       <hr>
       <div class="half-box">
@@ -25,6 +25,9 @@
     <script>
         $('#Generate_New').click(function(){ 
           //reteriving data from site...
+
+          document.body.style.cursor='wait';
+          
           const puppeteer = require('puppeteer');
           const cheerio = require("cheerio");
           const tableToCSV = require('node-table-to-csv');
@@ -32,10 +35,12 @@
             const browser = await puppeteer.launch();
             const page = await browser.newPage();
             await page.goto('https://banner.umw.edu/prod/umw_clas.p_displayallnocount');
+
             const [response] = await Promise.all([
               page.click('#id____UID0',{'delay' : 50}),
               page.waitForNavigation({'delay': 250})
             ]);
+
             const html = await page.content()
             const $ = cheerio.load(html, {'normalizeWhitespace': true})
             
