@@ -10,7 +10,7 @@
       <h1><a href="index.html">CPSC Department Schedule Generator</a></h1>
     </div>
     <div>
-      <table>
+      <table id="dept_table">
         <thead>
           <tr>
             <th rowspan="2" scope="col">
@@ -83,5 +83,80 @@
       </table>
     </div>
     <script>window.$ = window.jQuery = require('jquery');</script>
+    <script type="text/javascript">
+      
+      function generateDeptTable() {
+
+        var mysql = require('mysql');
+        var con = mysql.createConnection({
+          host: "localhost",
+          user: "root",
+          password: "",
+          database: "scheduleDB"
+        });
+
+        let queryString = ??QUERY??
+
+        con.connect(function(err) {
+          if (err) throw err;
+          con.query(queryString, function (err, result, fields) {
+            if (err) throw err;
+            console.log(result); // Store in array - TODO
+          });
+        });
+
+        let tableHTML = '';
+        tableHTML = tableHTML.concat('<thead>');
+        tableHTML = tableHTML.concat('<tr>');
+        tableHTML = tableHTML.concat('<th rowspan="2" scope="col">');
+        tableHTML = tableHTML.concat('Instructors');
+        tableHTML = tableHTML.concat('<a href="prof_data.html"><img class="icon" src="images/edit_icon.png" height="25px" width="25px"></a>');
+        tableHTML = tableHTML.concat('</th>');
+        tableHTML = tableHTML.concat('<th colspan="5" scope="colgroup">Office Hours</th>');
+        tableHTML = tableHTML.concat('<th rowspan="2" scope="col">Course(s)</th>');
+        tableHTML = tableHTML.concat('<th rowspan="2" scope="col">Times/Days of Classes</th>');
+        tableHTML = tableHTML.concat('<th rowspan="2" scope="col">Rm. No.</th>');
+        tableHTML = tableHTML.concat('</tr>');
+        tableHTML = tableHTML.concat('<tr>');
+        tableHTML = tableHTML.concat('<th scope="col">M</th>');
+        tableHTML = tableHTML.concat('<th scope="col">T</th>');
+        tableHTML = tableHTML.concat('<th scope="col">W</th>');
+        tableHTML = tableHTML.concat('<th scope="col">Th</th>');
+        tableHTML = tableHTML.concat('<th scope="col">F</th>');
+        tableHTML = tableHTML.concat('</tr>');
+        tableHTML = tableHTML.concat('</thead>');
+
+        // Each professor gets a <tbody> tag
+        for(let i=0; i < ??NUM PROFS??; i++) {
+
+          tableHTML = tableHTML.concat('<tbody contenteditable="true">');
+
+          // Init empty office hour cells
+          tableHTML = tableHTML.concat('<tr>');
+          for(let i = 0; i < 6; i++) {
+            tableHTML = tableHTML.concat('<td rowspan="' + ??NUM CLASSES?? +'"></td>');
+          }
+          tableHTML = tableHTML.concat('</tr>');
+
+          // Make a <tr> for each class this prof has
+          for(let i = 0; i < ??NUM CLASSES??; i++) {
+            tableHTML = tableHTML.concat('<tr>');
+
+            tableHTML = tableHTML.concat('<td>' + ??COURSE?? + '</td>');
+            tableHTML = tableHTML.concat('<td>' + ??MEETING TIME?? + '</td>');
+            tableHTML = tableHTML.concat('<td>' + ??ROOM NUM?? + '</td>');
+
+            tableHTML = tableHTML.concat('</tr>');
+          }
+
+          tableHTML = tableHTML.concat('</tbody>');
+
+        }
+
+        document.getElementById('dept_table').innerHTML = tableHTML;
+
+      }
+
+    </script>
   </body>
 </html>
