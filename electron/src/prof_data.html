@@ -4,27 +4,72 @@
     <meta charset="utf-8">
     <title>CPSC Department Schedule Generator</title>
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
     <div class="header">
       <h1><a href="index.html">CPSC Department Schedule Generator</a></h1>
     </div>
     <h1><a href="schedule.html"><img class="icon" src="images/back_arrow_icon.png" width="25px" height="25px" style="vertical-align: text-top;"></a>Persistent Professor Data</h1>
-    <table>
+
+    <button class="btn" id="Save"><i class="fa fa-save"></i> Save</button>
+
+    <table id="ProfessorTable">
       <thead>
         <th>Professor</th>
-        <th>Email</th>
         <th>Phone</th>
         <th>Office</th>
+        <th>Email</th>
       </thead>
       <tbody contenteditable="true">
         <tr>
-          <td>Ian Finlayson</td>
-          <td>ifinlay@umw.edu</td>
+          <td>Finlayson I</td>
           <td>x237</td>
           <td>Trinkle 32</td>
+          <td>ifinlay@umw.edu</td>
         </tr>
       </tbody>
     </table>
+  <script> window.$ = window.jQuery = require('jquery') </script>
+  <script type="text/javascript">
+    $('#Save').click(function() {
+        var mysql = require("mysql");
+        var connection = mysql.createConnection({
+            host: "localhost",
+            user: "root",
+            password: "",
+            database: "scheduleDB",
+            multiplestatements: true 
+          });
+
+        connection.connect((err) => {
+          if (err){
+            return console.log(err.stack);
+            }
+          console.log("Connection successful")
+         });
+
+        var table = [];
+        $("#ProfessorTable tr").each(function() {
+            var arrayOfThisRow = [];
+            var tableData = $(this).find('td');
+            if (tableData.length > 0) {
+                tableData.each(function() { arrayOfThisRow.push($(this).text()); });
+                arrayOfThisRow.push(arrayOfThisRow.shift());
+                table.push(arrayOfThisRow);
+            }
+        });
+        
+        var queries = "";
+        table.forEach(function (item) {
+            queries += mysql.format("UPDATE professorData SET phone=?, office=?, email=? WHERE name=?", item);
+          });
+        connection.query(queries, function (err, result) {
+              if (err) throw err;
+              console.log("Number of records inserted: " + result.affectedRows);
+            });
+    });
+
+  </script>
   </body>
 </html>

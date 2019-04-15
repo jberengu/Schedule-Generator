@@ -77,48 +77,49 @@
             var queryString6= 'create table if not exists professorData (name varchar(255), phone varchar(225), office varchar(255), email varchar(225), isAdjunct int, PRIMARY KEY(name));'
             var queryString7= 'insert ignore into professorData (name, isAdjunct) select Instructors, 0 from scheduleCSV where Course like \'%CPSC%\' or Course like \'%DATA%\' or Course like \'%CYBR%\';'
             var queryString8= 'select * from scheduleCSV where Instructors in (select name from professorData) and (Course like \'%CPSC%\' or Course like \'%DATA%\' or Course like \'%CYBR%\' or Course like \'%FSEM%\');'
+            
             var queryString100= 'select * from scheduleCSV;'
             //creates database if it does not already exist
             connection.query(queryString1, (err, rows, fields) => {
               if(err){
                 return console.log("An error with the querry", err);
               }
-              console.log(rows);
+              //console.log(rows);
             });
             //moves into correct database
             connection.query(queryString2, (err, rows, fields) => {
               if(err){
                 return console.log("An error with the querry", err);
               }
-              console.log(rows);
+              //console.log(rows);
             });
             //drops old scheduleCSV table to make room for new information
             connection.query(queryString3, (err, rows, fields) => {
               if(err){
                 return console.log("An error with the querry", err);
               }
-              console.log(rows);
+              //console.log(rows);
             });
             //creates new scheduleCVS table
             connection.query(queryString4, (err, rows, fields) => {
               if(err){
                 return console.log("An error with the querry", err);
               }
-              console.log(rows);
+              //console.log(rows);
             });
             //loads site data into database
             connection.query(queryString5, (err, rows, fields) => {
               if(err){
                 return console.log("An error with the querry", err);
               }
-              console.log(rows);
+              //console.log(rows);
             });
             //creates professor table if not already existed
             connection.query(queryString6, (err, rows, fields) => {
               if(err){
                 return console.log("An error with the querry", err);
               }
-              console.log(rows);
+              //console.log(rows);
             });
 
             connection.query(queryString7, (err, rows, fields) => {
@@ -126,7 +127,7 @@
                 return console.log("An error with the querry", err);
               }
 
-              console.log(rows);
+              //console.log(rows);
             });
 
             connection.query(queryString8, (err, rows, fields) => {
@@ -134,7 +135,7 @@
                 return console.log("An error with the querry", err);
               }
 
-              console.log(rows);
+              //console.log(rows);
             });
 
             connection.end(() => {
