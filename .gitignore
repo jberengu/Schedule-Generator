@@ -1,0 +1,7 @@
+node_modules
+out
+.idea/*
+lib
+/ScheduleGeneratorGUI/build/
+/ScheduleGeneratorGUI/dist/
+package-lock.json
