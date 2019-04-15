@@ -40,45 +40,51 @@ con.connect(function(err) {
             tableHTML = tableHTML.concat('</thead>');
 
             function mapFunction(index, professor) {
-              if(index.Instructors == professor.name) {
-                return index;
-              }
-              else{
-                return null;
-              }
+                if (index.Instructors == professor.name) {
+                    return index;
+                } else {
+                    return null;
+                }
             }
 
             // Each professor gets a <tbody> tag
-            for (let i = 0; i <  profData.length; i++) {
-                let professor= profData[i];
-                let profCourses= courseData.map(index => mapFunction(index, professor));
-                console.log(profCourses);
+            for (let i = 0; i < profData.length; i++) {
+                let professor = profData[i];
+                let profCourses = [];
+                for (let x = 0; x < courseData.length; x++) {
+                    if (courseData[x].Instructors == professor.name) {
+                        profCourses.push(courseData[x]);
+                    }
+                }
 
-                /*tableHTML = tableHTML.concat('<tbody contenteditable="true">');
+                tableHTML = tableHTML.concat('<tbody contenteditable="true">');
 
                 // Init empty office hour cells
                 tableHTML = tableHTML.concat('<tr>');
-                for (let i = 0; i < 6; i++) {
-                    tableHTML = tableHTML.concat('<td rowspan="' + ? ? NUM CLASSES ? ? +'"></td>');
+                tableHTML = tableHTML.concat('<td rowspan="' + (profCourses.length + 1) + '"><div>' + professor.name +'</div>' + '<div>'+professor.office + ' - ' + professor.phone+ '</div>' + '<div>' + professor.email + '</div></td>');
+                for (let i = 0; i < 5; i++) {
+                    tableHTML = tableHTML.concat('<td rowspan="' + (profCourses.length + 1) + '"></td>');
                 }
                 tableHTML = tableHTML.concat('</tr>');
 
+
+
                 // Make a <tr> for each class this prof has
-                for (let i = 0; i < ? ? NUM CLASSES ? ? ; i++) {
+                for (let i = 0; i < profCourses.length; i++) {
                     tableHTML = tableHTML.concat('<tr>');
 
-                    tableHTML = tableHTML.concat('<td>' + ? ? COURSE ? ? +'</td>');
-                    tableHTML = tableHTML.concat('<td>' + ? ? MEETING TIME ? ? +'</td>');
-                    tableHTML = tableHTML.concat('<td>' + ? ? ROOM NUM ? ? +'</td>');
+                    tableHTML = tableHTML.concat('<td>' + profCourses[i].Course + '</td>');
+                    tableHTML = tableHTML.concat('<td>' + profCourses[i].TIME + ' (' + profCourses[i].Days + ')</td>');
+                    tableHTML = tableHTML.concat('<td>' + profCourses[i].Bldgs + ' ' + profCourses[i].Rooms + '</td>');
 
                     tableHTML = tableHTML.concat('</tr>');
                 }
 
-                tableHTML = tableHTML.concat('</tbody>');*/
+                tableHTML = tableHTML.concat('</tbody>');
 
             }
 
-            /*document.getElementById('schedule_table').innerHTML = tableHTML;*/
+            document.getElementById('schedule_table').innerHTML = tableHTML;
         });
     });
 });
