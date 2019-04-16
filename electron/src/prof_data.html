@@ -15,22 +15,12 @@
     <button class="btn" id="Save"><i class="fa fa-save"></i> Save</button>
 
     <table id="ProfessorTable">
-      <thead>
-        <th>Professor</th>
-        <th>Phone</th>
-        <th>Office</th>
-        <th>Email</th>
-      </thead>
-      <tbody contenteditable="true">
-        <tr>
-          <td>Finlayson I</td>
-          <td>x237</td>
-          <td>Trinkle 32</td>
-          <td>ifinlay@umw.edu</td>
-        </tr>
-      </tbody>
+      
     </table>
   <script> window.$ = window.jQuery = require('jquery') </script>
+
+  <script src="generateProfessorTable.js" type="text/javascript"></script>
+
   <script type="text/javascript">
     $('#Save').click(function() {
         var mysql = require("mysql");
@@ -61,13 +51,23 @@
         });
         
         var queries = "";
+
+        //console.log(table)
+
         table.forEach(function (item) {
-            queries += mysql.format("UPDATE professorData SET phone=?, office=?, email=? WHERE name=?", item);
-          });
-        connection.query(queries, function (err, result) {
+            console.log(item)
+            query = mysql.format("UPDATE professorData SET phone=?, office=?, email=? WHERE name=?",item);
+            
+            connection.query(query, function (err, result) {
               if (err) throw err;
               console.log("Number of records inserted: " + result.affectedRows);
             });
+          });
+        /*connection.query(queries, function (err, result) {
+              if (err) throw err;
+              console.log("Number of records inserted: " + result.affectedRows);
+            });
+            */
     });
 
   </script>
