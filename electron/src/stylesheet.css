@@ -1,37 +1,37 @@
 body {
-	font-family: sans-serif;
-	color: rgb(50, 50, 50);
+    font-family: sans-serif;
+    color: rgb(50, 50, 50);
 }
 
 h1 {
-	text-align: center;
+    text-align: center;
 }
 
 .header {
-	width: 100%;
-	height: 100px;
-	line-height: 100px;
-	background-color: darkslategrey;
-	color: white;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    background-color: darkslategrey;
+    color: white;
 }
 
 .header a {
-	color: white;
-	text-decoration: none;
+    color: white;
+    text-decoration: none;
 }
 
 .header h1 {
-	font-size: 40px;
-	text-align: center;
+    font-size: 40px;
+    text-align: center;
 }
 
 .homepage-content {
-	width: 100%;
-	margin-top: 125px;
+    width: 100%;
+    margin-top: 125px;
 }
 
-.homepage-content hr{
-	float: left;
+.homepage-content hr {
+    float: left;
     border: none;
     border-left: 1px solid gainsboro;
     height: 30vh;
@@ -39,57 +39,66 @@ h1 {
 }
 
 .half-box {
-	float: left;
-	width: 49.5%;
-	text-align: center;
+    float: left;
+    width: 49.5%;
+    text-align: center;
 }
 
 .button {
-	color: white;
-	padding: 15px 40px;
-	background-color: darkslategrey;
-	text-decoration: none;
-	transition-duration: 0.3s;
+    color: white;
+    padding: 15px 40px;
+    background-color: darkslategrey;
+    text-decoration: none;
+    transition-duration: 0.3s;
 }
 
 .button:hover {
-	background-color: rgba(47, 79, 79, 0.4);
-	color: rgb(50, 50, 50);
+    background-color: rgba(47, 79, 79, 0.4);
+    color: rgb(50, 50, 50);
 }
 
 .icon {
-	vertical-align: middle;
-	margin: 5px;
+    vertical-align: middle;
+    margin: 5px;
 }
 
 .icon:hover {
-	opacity: 0.5;
+    opacity: 0.5;
 }
 
 .btn {
-  background-color: MediumSeaGreen;
-  border: none;
-  color: white;
-  padding: 12px 30px;
-  cursor: pointer;
-  font-size: 20px;
+    background-color: MediumSeaGreen;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 20px;
 }
+
 .btn:hover {
-  background-color: DarkGreen;
-  cursor: pointer;
+    background-color: DarkGreen;
+    cursor: pointer;
+}
+
+select {
+    text-align-last: center;
+    padding-right: 29px;
 }
 
 table {
-	margin-top: 40px;
-	margin-left: auto;
-	margin-right: auto;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-table, th, td {
-	border: 1px solid black;
-	border-collapse: collapse;
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
 }
 
-th, td {
-	padding: 15px;
+th,
+td {
+    padding: 15px;
 }

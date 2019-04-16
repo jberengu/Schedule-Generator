@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>CPSC Department Schedule Generator</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1><a href="index.html">CPSC Department Schedule Generator</a></h1>
+    </div>
+    <div>
+        <button id="Download" class="btn">
+            <i class="fa fa-download"></i> Download Schedule
+        </button>
+        <button id="Professor Table" class="btn" style="float: right;">
+            <a href="schedule.html" style="text-decoration:none" class="btn">Department Schedule</a>
+        </button>
+    </div>
+    <div align="center">
+        <select>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="opel">Opel</option>
+            <option value="audi">Audi</option>
+        </select>
+    </div>
+    <script>
+    window.$ = window.jQuery = require('jquery');
+    </script>
+    <script type="text/javascript">
+    $('#Download').click(function() {
+
+        const html2canvas = require("html2canvas");
+        html2canvas(document.querySelector('#schedule_table')).then(function(canvas) {
+            console.log(canvas);
+            saveAs(canvas.toDataURL(), 'file-name.png');
+        });
+    });
+
+    function saveAs(uri, filename) {
+
+        var link = document.createElement('a');
+        if (typeof link.download === 'string') {
+            link.href = uri;
+            link.download = filename;
+            //Firefox requires the link to be in the body
+            document.body.appendChild(link);
+            //simulate click
+            link.click();
+            //remove the link when done
+            document.body.removeChild(link);
+        } else {
+            window.open(uri);
+        }
+    }
+    </script>
+</body>
+
+</html>
