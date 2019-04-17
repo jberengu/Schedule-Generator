@@ -23,8 +23,6 @@ function myFunction() {
     var strUser = element.options[element.selectedIndex];
     var queryString1 = "select * from professorData where name='" + strUser.value + "';";
     var queryString2 = "select * from scheduleCSV where Instructors = '" + strUser.value + "'  and (Course like '%CPSC%' or Course like '%DATA%' or Course like '%CYBR%' or Course like '%FSEM%');";
-    con.connect(function(err) {
-        if (err) throw err;
         con.query(queryString1, function(err, results, fields) {
             if (err) throw err;
             tableHTML = tableHTML.concat('<h2>' + semester + ' ' + d.getFullYear() + '</h2>');
@@ -66,14 +64,13 @@ function myFunction() {
                 if (err) throw err;
                 for (let i = 0; i < results.length; i++) {
                     tableHTML = tableHTML.concat('<tbody>');
-                    tableHTML = tableHTML.concat('<td rowspan="15" contenteditable="true">'+results[i].Course+'-'+results[i].Sec+'</td>');
-                    tableHTML = tableHTML.concat('<td rowspan="15" contenteditable="true">'+results[i].TIME+' ('+results[i].Days+')</td>');
-                    tableHTML = tableHTML.concat('<td rowspan="15" contenteditable="true">'+results[i].Rooms+'</td>');
+                    tableHTML = tableHTML.concat('<td rowspan="15" contenteditable="true">' + results[i].Course + '-' + results[i].Sec + '</td>');
+                    tableHTML = tableHTML.concat('<td rowspan="15" contenteditable="true">' + results[i].TIME + ' (' + results[i].Days + ')</td>');
+                    tableHTML = tableHTML.concat('<td rowspan="15" contenteditable="true">' + results[i].Rooms + '</td>');
                     tableHTML = tableHTML.concat('</tbody>');
                 }
                 tableHTML = tableHTML.concat('</table>');
                 document.getElementById('Professor Table').innerHTML = tableHTML;
-            })
-        })
+        });
     });
 }

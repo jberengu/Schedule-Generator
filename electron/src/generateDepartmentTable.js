@@ -9,8 +9,8 @@ var con = mysql.createConnection({
 let queryString1 = "select * from scheduleCSV where Instructors in (select name from professorData) and (Course like \'%CPSC%\' or Course like \'%DATA%\' or Course like \'%CYBR%\' or Course like \'%FSEM%\');";
 let queryString2 = "select * from professorData;";
 
-con.connect(function(err) {
-    if (err) throw err;
+//con.connect(function(err) {
+  //  if (err) throw err;
     con.query(queryString1, function(err, courseData, fields) {
         if (err) throw err;
         con.query(queryString2, function(err, profData, fields) {
@@ -58,7 +58,7 @@ con.connect(function(err) {
 
                 // Init empty office hour cells
                 tableHTML = tableHTML.concat('<tr>');
-                tableHTML = tableHTML.concat('<td rowspan="' + (profCourses.length + 1) + '"><div>' + professor.name +'</div>' + '<div>'+professor.office + ' - ' + professor.phone+ '</div>' + '<div>' + professor.email + '</div></td>');
+                tableHTML = tableHTML.concat('<td rowspan="' + (profCourses.length + 1) + '"><div>' + professor.name + '</div>' + '<div>' + professor.office + ' - ' + professor.phone + '</div>' + '<div>' + professor.email + '</div></td>');
                 for (let i = 0; i < 5; i++) {
                     tableHTML = tableHTML.concat('<td rowspan="' + (profCourses.length + 1) + '"></td>');
                 }
@@ -82,6 +82,10 @@ con.connect(function(err) {
             }
 
             document.getElementById('schedule_table').innerHTML = tableHTML;
-        });
+        //});
     });
 });
+
+
+
+
