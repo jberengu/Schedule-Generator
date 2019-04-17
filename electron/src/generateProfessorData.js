@@ -7,14 +7,11 @@ var con = mysql.createConnection({
     database: "scheduleDB"
 });
 
-//let queryString1 = "select * from scheduleCSV where Instructors in (select name from professorData) and (Course like \'%CPSC%\' or Course like \'%DATA%\' or Course like \'%CYBR%\' or Course like \'%FSEM%\');";
 let query = "select * from professorData;";
 
 con.connect(function(err) {
     con.query(query, function(err, profData, fields) {
         if (err) throw err;
-        //console.log(profData);
-
         let tableHTML = '';
         tableHTML = tableHTML.concat('<thead>');
         tableHTML = tableHTML.concat('<th>Professor</th>');
@@ -31,7 +28,6 @@ con.connect(function(err) {
             tableHTML = tableHTML.concat('<td>' + profData[i].phone + '</td>');
             tableHTML = tableHTML.concat('<td>' + profData[i].office + '</td>');
             tableHTML = tableHTML.concat('<td>' + profData[i].email + '</td>');
-           // <input type="button" id="bt" value="Create Checkbox" onclick="createChk(prod)" />
             tableHTML = tableHTML.concat("<td> <input class=deleteMe name=" + "'" + profData[i].name +"'" + 'type=button onclick=deleteThis(this) value=DELETE></td>')
             tableHTML = tableHTML.concat('</tr>');
         }

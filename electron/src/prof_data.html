@@ -34,18 +34,10 @@
                 multiplestatements: true
             });
 
-            connection.connect((err) => {
-                if (err) {
-                    return console.log(err.stack);
-                }
-                console.log("Connection successful")
-            });
-
             query = mysql.format("DELETE from professorData where name = ?", name);
 
             connection.query(query, function(err, result) {
                 if (err) throw err;
-                console.log("Number of records deleted: " + result.affectedRows);
                 document.getElementById('ProfessorTable').deleteRow(d);
             });
         } else {
@@ -64,13 +56,6 @@
             multiplestatements: true
         });
 
-        connection.connect((err) => {
-            if (err) {
-                return console.log(err.stack);
-            }
-            console.log("Connection successful")
-        });
-
         var table = [];
         $("#ProfessorTable tr").each(function() {
             var arrayOfThisRow = [];
@@ -87,18 +72,23 @@
         });
 
         var queries = "";
+        var worked = true;
         table.forEach(function(item) {
-            console.log(item)
             query = mysql.format("UPDATE professorData SET phone=?, office=?, email=? WHERE name=?", item);
 
             connection.query(query, function(err, result) {
-                if (err) throw err;
-                console.log("Number of records inserted: " + result.affectedRows);
+                if (err) {
+                    worked = false;
+                    throw err;
+                }
             });
         });
-        connection.end(() => {
-            console.log("Connection succesfully closed");
-        });
+
+        if (worked) {
+            alert("Saved!")
+        } else {
+            alert("Something went wrong")
+        }
     });
     </script>
 </body>
