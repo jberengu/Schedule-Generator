@@ -7,6 +7,10 @@ h1 {
     text-align: center;
 }
 
+
+.deleteMe{
+	background-color: Red; 
+}
 .header {
     width: 100%;
     height: 100px;
@@ -96,4 +100,8 @@ td {
 th,
 td {
     padding: 15px;
+}
+
+th {
+	background-color: khaki;
 }

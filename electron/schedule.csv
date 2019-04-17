@@ -238,7 +238,7 @@ CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instruc
 "86804","DGST 395","02","Applied Digital Studies","","","Y","","","3","12:00 pm-12:50 pm","MWF","Fredericksburg","HCC","327","Whalen Z",""
 "87688","DSCI 352","02","Analytics I: Predictive Models","","","Y","","Y","3","10:00 am-10:50 am","MWF","Fredericksburg","WOOD","149","Garcia C","View"
 "87690","DSCI 352","03","Analytics I: Predictive Models","","","Y","","Y","3","2:00 pm-2:50 pm","MWF","Fredericksburg","WOOD","202","Garcia C","View"
-"85636","DSCI 353","01","Analytics II: Optimization Mod","","","Y","","Y","3","12:00 pm-12:50 pm","MWF","Fredericksburg","WOOD","149","Fontem B","View"
+"85636","DSCI 353","01","Analytics II: Optimization Mod","","","Y","","Y","3","12:00 pm-12:50 pm","MWF","Fredericksburg","WOOD","149","Zhao X","View"
 "86609","DSCI 353","03","Analytics II: Optimization Mod","","","Y","","Y","3","9:00 am-9:50 am","MWF","Fredericksburg","WOOD","211","Zhao X","View"
 CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instructor/s,Additional Requirements
 "87693","DSCI 353","04","Analytics II: Optimization Mod","","","Y","","Y","3","10:00 am-10:50 am","MWF","Fredericksburg","WOOD","211","Zhao X","View"
@@ -483,8 +483,8 @@ CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instruc
 "84047","GISC 351","01","Spat Anlys, Data Mod, Modeling","","","Y","","","4","6:00 pm-9:30 pm","M","Fredericksburg","MONR","320","Rizzo B","View"
 "82517","GISC 351","02","Spat Anlys, Data Mod, Modeling","","","Y","","","4","1:31 pm-3:00 pm12:30 pm-1:30 pm","RTR","Fredericksburg","MONRMONR","114114","Millones Mayer M","View"
 CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instructor/s,Additional Requirements
-"83353","GISC 450","01","GIS Programming","","","Y","","","4","6:00 pm-9:30 pm","T","Fredericksburg","MONR","320","Rizzo B","View"
-"87766","GISC 471D","01","GIS & Human Induced Landscapes","","","Y","","","4","6:00 pm-9:30 pm","W","Fredericksburg","JEPS","358","Millones Mayer M",""
+"83353","GISC 450","01","GIS Programming","","","Y","","Y","4","6:00 pm-9:30 pm","T","Fredericksburg","MONR","320","Rizzo B","View"
+"87766","GISC 471D","01","GIS & Human Induced Landscapes","","","Y","","","4","6:00 pm-9:30 pm","W","Fredericksburg","JEPS","358","Millones Mayer M","View"
 "87190","GISC 482","01","Web GIS:Concepts & Application","","","Y","","","4","6:00 pm-9:30 pm","R","Fredericksburg","MONR","114","Yin P",""
 "82913","GREK 101","01","Elementary Greek","","","","","","3","10:00 am-10:50 am","MWF","Fredericksburg","TRIN","138","Pitts A",""
 "80329","GREK 201","01","Intermediate Greek","","","Y","","","3","2:00 pm-2:50 pm","MWF","Fredericksburg","TRIN","243","Ambuel D",""

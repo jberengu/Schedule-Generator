@@ -31,24 +31,17 @@ con.connect(function(err) {
             tableHTML = tableHTML.concat('<th rowspan="2" scope="col">Rm. No.</th>');
             tableHTML = tableHTML.concat('</tr>');
             tableHTML = tableHTML.concat('<tr>');
-            tableHTML = tableHTML.concat('<th scope="col">M</th>');
-            tableHTML = tableHTML.concat('<th scope="col">T</th>');
-            tableHTML = tableHTML.concat('<th scope="col">W</th>');
-            tableHTML = tableHTML.concat('<th scope="col">Th</th>');
-            tableHTML = tableHTML.concat('<th scope="col">F</th>');
+            tableHTML = tableHTML.concat('<th scope="col" style="background-color: orange;">M</th>');
+            tableHTML = tableHTML.concat('<th scope="col" style="background-color: lightpink;">T</th>');
+            tableHTML = tableHTML.concat('<th scope="col" style="background-color: lightblue;">W</th>');
+            tableHTML = tableHTML.concat('<th scope="col" style="background-color: olivedrab;">Th</th>');
+            tableHTML = tableHTML.concat('<th scope="col" style="background-color: chocolate;">F</th>');
             tableHTML = tableHTML.concat('</tr>');
             tableHTML = tableHTML.concat('</thead>');
 
-            function mapFunction(index, professor) {
-                if (index.Instructors == professor.name) {
-                    return index;
-                } else {
-                    return null;
-                }
-            }
-
-            // Each professor gets a <tbody> tag
             for (let i = 0; i < profData.length; i++) {
+
+                // Build an array full of our professor data
                 let professor = profData[i];
                 let profCourses = [];
                 for (let x = 0; x < courseData.length; x++) {
@@ -57,6 +50,10 @@ con.connect(function(err) {
                     }
                 }
 
+                // Space each tbody with a green box
+                tableHTML = tableHTML.concat('<tr style="background-color: lightgreen;"></tr>');
+
+                // Each professor gets a <tbody> tag
                 tableHTML = tableHTML.concat('<tbody contenteditable="true">');
 
                 // Init empty office hour cells
