@@ -70,7 +70,7 @@ function myFunction() {
                     tableHTML = tableHTML.concat('</tbody>');
                 }
                 tableHTML = tableHTML.concat('</table>');
-                document.getElementById('Professor Table').innerHTML = tableHTML;
+                document.getElementById('Professor_Table').innerHTML = tableHTML;
         });
     });
 }
