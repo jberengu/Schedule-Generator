@@ -33,7 +33,7 @@ function myFunction() {
             tableHTML = tableHTML.concat('<table>');
             tableHTML = tableHTML.concat('<thead>');
             tableHTML = tableHTML.concat('</tr>');
-            tableHTML = tableHTML.concat('<th colspan="5" scope="colgroup">Office Hours</th>');
+            tableHTML = tableHTML.concat('<th colspan="5" scope="colgroup">Office Hours<br>(Other times available by appointment)</th>');
             tableHTML = tableHTML.concat('<tr>');
             tableHTML = tableHTML.concat('<th scope="col" style="background-color: orange;">M</th>');
             tableHTML = tableHTML.concat('<th scope="col" style="background-color: lightpink;">T</th>');
