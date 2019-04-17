@@ -5,3 +5,4 @@ lib
 /ScheduleGeneratorGUI/build/
 /ScheduleGeneratorGUI/dist/
 package-lock.json
+schedule.csv
