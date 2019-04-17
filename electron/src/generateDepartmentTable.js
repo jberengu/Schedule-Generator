@@ -8,13 +8,25 @@ var con = mysql.createConnection({
 
 let queryString1 = "select * from scheduleCSV where Instructors in (select name from professorData) and (Course like \'%CPSC%\' or Course like \'%DATA%\' or Course like \'%CYBR%\' or Course like \'%FSEM%\');";
 let queryString2 = "select * from professorData;";
+var d = new Date();
+var month = d.getMonth();
+var year= d.getFullYear()
+var semester;
+if (month >= 7 && month <= 11) {
+    semester = "Fall";
+} else if (month <= 4) {
+    semester = "Spring";
+} else {
+    semester = "Summer";
+}
 
     con.query(queryString1, function(err, courseData, fields) {
         if (err) throw err;
         con.query(queryString2, function(err, profData, fields) {
             if (err) throw err;
 
-            let tableHTML = '';
+            let tableHTML = '<h2>Computer Science Department - ' + year + ' ' + semester + ' Classes & Office Hours</h2>';
+            tableHTML = tableHTML.concat('<table>');
             tableHTML = tableHTML.concat('<thead>');
             tableHTML = tableHTML.concat('<tr>');
             tableHTML = tableHTML.concat('<th rowspan="2" scope="col">');
@@ -47,14 +59,14 @@ let queryString2 = "select * from professorData;";
                 }
 
                 // Space each tbody with a green box
-                tableHTML = tableHTML.concat('<tr style="background-color: lightgreen;"></tr>');
+                tableHTML = tableHTML.concat('<tr style="background-color: rgb(215, 255, 218);"><td colspan="9"></td></tr>');
 
                 // Each professor gets a <tbody> tag
                 tableHTML = tableHTML.concat('<tbody contenteditable="true">');
 
                 // Init empty office hour cells
                 tableHTML = tableHTML.concat('<tr>');
-                tableHTML = tableHTML.concat('<td rowspan="' + (profCourses.length + 1) + '"><div>' + professor.name + '</div>' + '<div>' + professor.office + ' - ' + professor.phone + '</div>' + '<div>' + professor.email + '</div></td>');
+                tableHTML = tableHTML.concat('<td rowspan="' + (profCourses.length + 1) + '">' + professor.name + '</td>');
                 for (let i = 0; i < 5; i++) {
                     tableHTML = tableHTML.concat('<td rowspan="' + (profCourses.length + 1) + '"></td>');
                 }
@@ -73,10 +85,13 @@ let queryString2 = "select * from professorData;";
                     tableHTML = tableHTML.concat('</tr>');
                 }
 
+                tableHTML = tableHTML.concat('<tr><td colspan="9">' + professor.office + ' - ' + professor.phone + ' - ' + professor.email + '</td></tr>');
+
                 tableHTML = tableHTML.concat('</tbody>');
 
             }
 
+            tableHTML = tableHTML.concat('</table>');
             document.getElementById('schedule_table').innerHTML = tableHTML;
     });
 });
