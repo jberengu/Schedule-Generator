@@ -16,22 +16,16 @@
         <button id="Download" class="btn">
             <i class="fa fa-download"></i> Download Schedule
         </button>
-        <button id="Professor Table" class="btn" style="float: right;">
+        <button id="Department Table" class="btn" style="float: right;">
             <a href="schedule.html" style="text-decoration:none" class="btn">Department Schedule</a>
         </button>
     </div>
-    <div align="center">
-        <select>
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="opel">Opel</option>
-            <option value="audi">Audi</option>
-        </select>
-    </div>
+    <div align="center"><select id="profDropDown"></select></div>
+    <div align="center" id="Professor Table"></div>
     <script>
     window.$ = window.jQuery = require('jquery');
     </script>
-    <script type="text/javascript">
+    <!--<script type="text/javascript">
     $('#Download').click(function() {
 
         const html2canvas = require("html2canvas");
@@ -57,7 +51,30 @@
             window.open(uri);
         }
     }
+    </script>-->
+    <script type="text/javascript">
+    var mysql = require('mysql');
+    var con = mysql.createConnection({
+        host: "localhost",
+        user: "root",
+        password: "",
+        database: "scheduleDB"
+    });
+    var tableHTML = '';
+    queryString1 = "select name from professorData;"
+    con.connect(function(err) {
+        if (err) throw err;
+        con.query(queryString1, function(err, results, fields) {
+            if (err) throw err;
+            tableHTML = tableHTML.concat('<option value="null">- Select -</option>');
+            for (let i = 0; i < results.length; i++) {
+                tableHTML = tableHTML.concat('<option value="' + results[i].name + '">' + results[i].name + '</option>');
+            }
+            document.getElementById('profDropDown').innerHTML = tableHTML;
+        })
+    });
     </script>
+    <script type="text/javascript" src="generateProfessorTable.js"></script>
 </body>
 
 </html>

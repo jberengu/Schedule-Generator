@@ -80,11 +80,6 @@ h1 {
     cursor: pointer;
 }
 
-select {
-    text-align-last: center;
-    padding-right: 29px;
-}
-
 table {
     margin-top: 40px;
     margin-left: auto;
