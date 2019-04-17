@@ -551,6 +551,7 @@ CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instruc
 CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instructor/s,Additional Requirements
 "86115","HONR 201","03","Honors Service Learning","","","","CE","","1","12:30 pm-1:30 pm","T","Fredericksburg","HCC","TBA","Slunt K",""
 "86116","HONR 201","04","Honors Service Learning","","","","CE","","1","1:00 pm-1:50 pm","F","Fredericksburg","HCC","TBA","Slunt K",""
+"87946","HONR 491","01","Honors Individual Study","Y","","","","","1","TBA","TBA","Fredericksburg","TBA","TBA","Reif R",""
 "86896","HSCI 120","01","Med Terminology for Hlth Profl","Y","","","","","3","TBA","TBA","Fredericksburg","ON","LINE","McCullough P",""
 "87288","IDIS 130","02","Intro to Sports Management","","","","","Y","3","9:30 am-10:45 am","TR","Fredericksburg","GOOL","205","Wood RRiser W",""
 "87721","IDIS 130","03","Intro to Sports Management","","","","","Y","3","10:00 am-10:50 am","MWF","Fredericksburg","GOOL","205","Delaney AMoore C",""
@@ -569,8 +570,8 @@ CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instruc
 "80729","LATN 101","01","Elementary Latin","","","","","","3","11:00 am-12:15 pm","TR","Fredericksburg","TRIN","207","Romero J",""
 "80730","LATN 101","02","Elementary Latin","","","","","","3","9:00 am-9:50 am","MWF","Fredericksburg","TRIN","207","Heimbach E",""
 "84946","LATN 101","03","Elementary Latin","","","","","","3","10:00 am-10:50 am","MWF","Fredericksburg","TRIN","207","Heimbach E",""
-"86718","LATN 101","04","Elementary Latin","","","","","","3","2:00 pm-2:50 pm","MWF","Fredericksburg","TRIN","207","Staff A",""
 CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instructor/s,Additional Requirements
+"86718","LATN 101","04","Elementary Latin","","","","","","3","2:00 pm-2:50 pm","MWF","Fredericksburg","TRIN","207","Staff A",""
 "80732","LATN 201","01","Intermediate Latin","","","Y","","","3","11:00 am-11:50 am","MWF","Fredericksburg","TRIN","207","Pitts A",""
 "85537","LATN 201","02","Intermediate Latin","","","Y","","","3","2:00 pm-2:50 pm","MWF","Fredericksburg","TRIN","138","Pitts A",""
 "87772","LATN 201","03","Intermediate Latin","","","Y","","","3","12:00 pm-12:50 pm","MWF","Fredericksburg","TRIN","207","Heimbach E",""
@@ -591,8 +592,8 @@ CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instruc
 "80348","MATH 110","02","Finite Math with Applications","","","","SI","","3","10:00 am-10:50 am","MWF","Fredericksburg","TRIN","119","Sheckels M",""
 "80349","MATH 110","03","Finite Math with Applications","","","","","","3","6:00 pm-7:15 pm","MW","Fredericksburg","TRIN","140","Wilson A",""
 "87717","MATH 110","04","Finite Math with Applications","","","","","","3","7:30 pm-8:45 pm","MW","Fredericksburg","TRIN","140","Wilson A",""
-"82834","MATH 111","01","Precalculus","","","","","","3","12:00 pm-12:50 pm","MWF","Fredericksburg","TRIN","B36","Magee J",""
 CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instructor/s,Additional Requirements
+"82834","MATH 111","01","Precalculus","","","","","","3","12:00 pm-12:50 pm","MWF","Fredericksburg","TRIN","B36","Magee J",""
 "80359","MATH 115A","01","Intr Math Modeling","","","","SI","","3","8:00 am-8:50 am","MWF","Fredericksburg","TRIN","140","Brown B",""
 "80360","MATH 115A","02","Intr Math Modeling","","","","SI","","3","9:00 am-9:50 am","MWF","Fredericksburg","TRIN","140","Brown B",""
 "80362","MATH 115A","03","Intr Math Modeling","","","","SI","","3","8:00 am-9:15 am","TR","Fredericksburg","TRIN","210","Collins J",""
@@ -613,8 +614,8 @@ CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instruc
 "80392","MATH 300","02","Linear Algebra","","","Y","","","3","3:30 pm-4:45 pm","TR","Fredericksburg","TRIN","119","Chiang Y",""
 "87714","MATH 312","01","Differential Equations","","","Y","","","3","8:00 am-8:50 am","MWF","Fredericksburg","TRIN","138","Sumner S",""
 "86138","MATH 321","01","Number Theory","","","Y","SI","","3","3:00 pm-3:50 pm","MWF","Fredericksburg","TRIN","119","Lehman J",""
-"86666","MATH 330","01","Foundations of Advanced Math","","","Y","WI","","3","11:00 am-11:50 am","MWF","Fredericksburg","TRIN","B36","Collins J",""
 CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instructor/s,Additional Requirements
+"86666","MATH 330","01","Foundations of Advanced Math","","","Y","WI","","3","11:00 am-11:50 am","MWF","Fredericksburg","TRIN","B36","Collins J",""
 "87715","MATH 421","01","Applied Partial Diff Equations","","","Y","","","3","10:00 am-10:50 am","MWF","Fredericksburg","TRIN","B36","Collins J",""
 "80398","MATH 431","01","Abstract Algebra","","","Y","WI","","3","1:00 pm-1:50 pm","MWF","Fredericksburg","TRIN","B36","Lehman J",""
 "80399","MATH 432","01","Abstract Algebra","","","Y","WI","","3","1:00 pm-1:50 pm","MWF","Fredericksburg","TRIN","119","Konieczny J",""
@@ -635,8 +636,8 @@ CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instruc
 "87120","MGMT 440","01","Intro to Project Management","","","Y","","Y","3","11:00 am-12:15 pm","TR","Fredericksburg","WOOD","149","Burrow J",""
 "85822","MGMT 460","01","Creative Thinking for Managers","","","","","Y","3","12:00 pm-12:50 pm","MWF","Fredericksburg","WOOD","132","Marsh J",""
 "85823","MGMT 490","01","Strategic Management","","","Y","WI","Y","3","10:00 am-10:50 am","MWF","Fredericksburg","WOOD","249","Richardson W",""
-"85824","MGMT 490","02","Strategic Management","","","Y","WI","Y","3","11:00 am-11:50 am","MWF","Fredericksburg","WOOD","249","Richardson W",""
 CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instructor/s,Additional Requirements
+"85824","MGMT 490","02","Strategic Management","","","Y","WI","Y","3","11:00 am-11:50 am","MWF","Fredericksburg","WOOD","249","Richardson W",""
 "87943","MGMT 490","03","Strategic Management","","","Y","WI","Y","3","2:00 pm-2:50 pm","MWF","Fredericksburg","WOOD","132","Chen W",""
 "85613","MIST 201","01","Mgmt Information Syst & Applic","","","","","Y","3","3:30 pm-4:45 pm","TR","Fredericksburg","WOOD","211","Lapke M",""
 "85614","MIST 201","02","Mgmt Information Syst & Applic","","","","","Y","3","9:30 am-10:45 am","TR","Fredericksburg","WOOD","211","Lapke M",""
@@ -657,8 +658,8 @@ CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instruc
 "85804","MSCI 101","01","Leadership Skills I","","","","","","1","9:00 am-10:15 am","M","Fredericksburg Off Campus","TBA","TBA","Sipe T",""
 "83000","MSCI 101","02","Leadership Skills I","","","","","","1","3:00 pm-4:15 pm","W","Fredericksburg Off Campus","TBA","TBA","Sipe T",""
 "85805","MSCI 101","03","Leadership Skills I","","","","","","1","9:00 am-10:15 am","R","Fredericksburg Off Campus","TBA","TBA","Sipe T",""
-"83001","MSCI 201","01","Leadership Skills III","","","Y","","","1","11:30 am-12:45 pm","R","Fredericksburg Off Campus","TBA","TBA","Sipe T",""
 CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instructor/s,Additional Requirements
+"83001","MSCI 201","01","Leadership Skills III","","","Y","","","1","11:30 am-12:45 pm","R","Fredericksburg Off Campus","TBA","TBA","Sipe T",""
 "85806","MSCI 201","02","Leadership Skills III","","","Y","","","1","9:00 am-10:15 am","W","Fredericksburg Off Campus","TBA","TBA","Sipe T",""
 "83002","MSCI 301","01","Applied Leadership I","Y","","Y","","","1","8:00 am-10:45 am","T","Fredericksburg Off Campus","TBA","TBA","Sipe T",""
 "83003","MSCI 401","01","Leadership & Management","Y","","Y","","","1","11:00 am-2:45 pm","T","Fredericksburg Off Campus","TBA","TBA","Sipe T",""
@@ -679,8 +680,8 @@ CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instruc
 "83034","MUPR 215","01","Class Guitar I","","","","","","1","3:30 pm-4:45 pm","R","Fredericksburg","POLL","127","Middle B",""
 "87868","MUPR 225A","01","Class Percussion","","","","","","1","2:00 pm-3:15 pm","W","Fredericksburg","POLL","127","Case M",""
 "87858","MUPR 254","01","Chamber Choir","Y","","","","","1","12:00 pm-12:50 pm","MWF","Fredericksburg","POLL","213","Ryder C",""
-"87865","MUPR 260","01","String Ensemble","","","","","","1","4:55 pm-6:10 pm","T","Fredericksburg","POLL","127","Wassum W",""
 CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instructor/s,Additional Requirements
+"87865","MUPR 260","01","String Ensemble","","","","","","1","4:55 pm-6:10 pm","T","Fredericksburg","POLL","127","Wassum W",""
 "87866","MUPR 261","01","Guitar Ensemble","","","","","","1","5:00 pm-5:50 pm","R","Fredericksburg","POLL","213","Middle B",""
 "87862","MUPR 262","01","Flute Ensemble","","","","","","1","4:00 pm-5:59 pm","W","Fredericksburg","POLL","127","Gately D",""
 "87860","MUPR 265","01","Jazz Improvisation Workshop","","","","","","1","5:00 pm-5:50 pm","R","Fredericksburg","POLL","127","Gately D",""
@@ -701,8 +702,8 @@ CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instruc
 "84282","MUPR 321A","01","Private French Horn","Y","","","","","1","TBA","TBA","Fredericksburg","POLL","TBA","Bollino D",""
 "80994","MUPR 322","01","Private Trumpet","Y","","","","","1","TBA","TBA","Fredericksburg","POLL","TBA","Huffman K",""
 "80995","MUPR 323A","01","Private Trombone","Y","","","","","1","TBA","TBA","Fredericksburg","POLL","TBA","Staff A",""
-"80996","MUPR 324","01","Private Tuba/Euphonium","Y","","","","","1","TBA","TBA","Fredericksburg","POLL","TBA","Carper G",""
 CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instructor/s,Additional Requirements
+"80996","MUPR 324","01","Private Tuba/Euphonium","Y","","","","","1","TBA","TBA","Fredericksburg","POLL","TBA","Carper G",""
 "80997","MUPR 325A","01","Private Percussion","Y","","","","","1","TBA","TBA","Fredericksburg","POLL","TBA","Case M",""
 "80998","MUPR 331A","01","Private Violin","Y","","","","","1","TBA","TBA","Fredericksburg","POLL","TBA","Wassum W",""
 "81000","MUPR 332","01","Private Viola","Y","","","","","1","TBA","TBA","Fredericksburg","POLL","TBA","Wassum W",""
@@ -723,8 +724,8 @@ CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instruc
 "80568","MUPR 409","01","Private Harp","Y","","","","","2","TBA","TBA","Fredericksburg","POLL","TBA","Bauson G",""
 "80569","MUPR 410","01","Private Organ","Y","","","","","2","TBA","TBA","Fredericksburg","POLL","TBA","Vreeland J",""
 "80570","MUPR 411","01","Private Flute","Y","","","","","2","TBA","TBA","Fredericksburg","POLL","TBA","Gately D",""
-"80572","MUPR 413","01","Private Clarinet","Y","","","","","2","TBA","TBA","Fredericksburg","POLL","TBA","Gately D",""
 CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instructor/s,Additional Requirements
+"80572","MUPR 413","01","Private Clarinet","Y","","","","","2","TBA","TBA","Fredericksburg","POLL","TBA","Gately D",""
 "80574","MUPR 415","01","Private Saxophone","Y","","","","","2","TBA","TBA","Fredericksburg","POLL","TBA","Gately D",""
 "84474","MUPR 421","01","Private French Horn","Y","","","","","2","TBA","TBA","Fredericksburg","POLL","TBA","Bollino D",""
 "80576","MUPR 422","01","Private Trumpet","Y","","","","","2","TBA","TBA","Fredericksburg","POLL","TBA","Huffman K",""
@@ -745,8 +746,8 @@ CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instruc
 "86350","MUTH 292","01","Chromatic Music theory Skills","","Y","Y","","","1","11:00 am-12:15 pm","TR","Fredericksburg","POLL","213","Staff A",""
 "86132","NURS 490","01","Practicum","","","Y","SI,WI","","3","TBA","TBA","Stafford","ON","LINE","Bowles M",""
 "85919","PHIL 101","01","Intro to Philosophy","","","","","","3","6:00 pm-7:15 pm","MW","Fredericksburg","TRIN","106A","Vasey C",""
-"87257","PHIL 110","01","Intro Law & Legal Writing","","","","","","3","9:00 am-9:50 am","MWF","Fredericksburg","TRIN","138","Richey S",""
 CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instructor/s,Additional Requirements
+"87257","PHIL 110","01","Intro Law & Legal Writing","","","","","","3","9:00 am-9:50 am","MWF","Fredericksburg","TRIN","138","Richey S",""
 "80785","PHIL 151B","01","Introductory Logic","","","","","","3","1:00 pm-1:50 pm","MWF","Fredericksburg","TRIN","106A","Reno M",""
 "83484","PHIL 160","01","Intro to Ethics","","","","","","3","2:00 pm-2:50 pm","MWF","Fredericksburg","TRIN","106A","Matzke J",""
 "80788","PHIL 201","01","Ancient Greek Phil","","","","","","3","10:00 am-10:50 am","MWF","Fredericksburg","TRIN","106A","Ambuel D",""
@@ -767,8 +768,8 @@ CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instruc
 "86659","PHYD 330","01","Events & Facility Mgmt","","","Y","","","3","11:00 am-11:50 am","MWF","Fredericksburg","GOOL","205","Helbling JApplebury D",""
 "80076","PHYD 400","01","Intercollegiate Baseball-Men","","","","","","1","TBA","MTWR","Fredericksburg","GOOL","AXGM","Riser W",""
 "80077","PHYD 403","01","Intercollegiate Basketball-Men","","","","","","1","TBA","MTWR","Fredericksburg","GOOL","GYM","Kahn M",""
-"80078","PHYD 404","01","Intercolleg Basketball-Women","","","","","","1","TBA","MTWR","Fredericksburg","GOOL","GYM","Applebury D",""
 CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instructor/s,Additional Requirements
+"80078","PHYD 404","01","Intercolleg Basketball-Women","","","","","","1","TBA","MTWR","Fredericksburg","GOOL","GYM","Applebury D",""
 "80079","PHYD 406","01","Intrcol Cross Cntry Men","","","","","","1","TBA","MTWR","Fredericksburg","GOOL","GYM","Lawson A",""
 "80080","PHYD 407","01","Intrcol Cross Cntry Women","","","","","","1","TBA","MTWR","Fredericksburg","GOOL","GYM","Lawson A",""
 "80081","PHYD 408","01","Intrcol Field Hockey-Women","","","","","","1","TBA","MTWR","Fredericksburg","GOOL","AXGM","Tierney J",""
@@ -789,8 +790,8 @@ CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instruc
 "80091","PHYD 484","01","I'Col Volleyball-Women","","","","","","1","TBA","MTWR","Fredericksburg","GOOL","GYM","Staff A",""
 "87908","PHYD 499","01","Sports Mgmt Internship","Y","","Y","","","3","TBA","TBA","Fredericksburg","TBA","TBA","Hall D",""
 "80334","PHYS 101","01","General Physics, w/lab","","","","","","4","11:00 am-12:50 pm9:30 am-10:45 am","MTR","Fredericksburg","JEPSJEPS","456219","King G",""
-"80335","PHYS 101","02","General Physics, w/lab","","","","","","4","1:00 pm-1:50 pm9:00 am-10:50 am","MWFR","Fredericksburg","JEPSJEPS","229456","Staff A",""
 CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instructor/s,Additional Requirements
+"80335","PHYS 101","02","General Physics, w/lab","","","","","","4","1:00 pm-1:50 pm9:00 am-10:50 am","MWFR","Fredericksburg","JEPSJEPS","229456","Staff A",""
 "83319","PHYS 101","03","General Physics, w/lab","","","","","","4","2:00 pm-3:50 pm1:00 pm-1:50 pm","RMWF","Fredericksburg","JEPSJEPS","456229","Staff A",""
 "82019","PHYS 103A","01","Elem Astronomy w/lab","","","","","","4","7:30 pm-9:20 pm6:00 pm-7:15 pm","TTR","Fredericksburg","JEPSJEPS","458229","Alexander W",""
 "82856","PHYS 103A","02","Elem Astronomy w/lab","","","","","","4","7:30 pm-9:20 pm6:00 pm-7:15 pm","RTR","Fredericksburg","JEPSJEPS","458229","Alexander W",""
@@ -811,8 +812,8 @@ CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instruc
 "84685","PSCI 102A","02","Intro to Internatn'l Relations","","","","","","3","8:00 am-9:15 am","TR","Fredericksburg","MONR","346","Davidson J",""
 "87171","PSCI 102A","03","Intro to Internatn'l Relations","","","","","","3","11:00 am-12:15 pm","TR","Fredericksburg","MONR","346","Larus E",""
 "80896","PSCI 201","01","American Government","","","","","","3","2:00 pm-2:50 pm","M","Fredericksburg","MONR","110","Murphy C",""
-"85598","PSCI 311A","01","Congress & Political Process","","","Y","WI","","3","8:00 am-8:50 am","MWF","Fredericksburg","MONR","212","Cooperman R",""
 CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instructor/s,Additional Requirements
+"85598","PSCI 311A","01","Congress & Political Process","","","Y","WI","","3","8:00 am-8:50 am","MWF","Fredericksburg","MONR","212","Cooperman R",""
 "87727","PSCI 311A","02","Congress & Political Process","","","Y","WI","","3","9:00 am-9:50 am","MWF","Fredericksburg","MONR","212","Cooperman R",""
 "80904","PSCI 321A","01","Theories of Internatnl Relatns","","","Y","","","3","9:00 am-9:50 am","MWF","Fredericksburg","MONR","110","Singh R",""
 "86333","PSCI 324","01","US-Latin American Relations","","","Y","","","3","3:30 pm-4:45 pm","TR","Fredericksburg","MONR","212","Staff A",""
@@ -833,8 +834,8 @@ CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instruc
 "87906","PSCI 491","01","Individual Study","Y","","Y","","","3","TBA","TBA","Fredericksburg","TBA","TBA","Cooperman R",""
 "87934","PSCI 491","02","Individual Study","Y","","Y","","","3","TBA","TBA","Fredericksburg","TBA","TBA","Murphy C",""
 "80438","PSYC 100","01","General Psychology","","","","","","3","9:00 am-9:50 am","MWF","Fredericksburg","MONR","116","Mackintosh V",""
-"80440","PSYC 100","02","General Psychology","","","","","","3","2:00 pm-3:15 pm","MW","Fredericksburg","MONR","116","Kolar D",""
 CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instructor/s,Additional Requirements
+"80440","PSYC 100","02","General Psychology","","","","","","3","2:00 pm-3:15 pm","MW","Fredericksburg","MONR","116","Kolar D",""
 "86741","PSYC 100","03","General Psychology","","","","","","3","6:00 pm-8:45 pm","M","Fredericksburg","MONR","346","Boyle J",""
 "87369","PSYC 100","04","General Psychology","","","","","","3","TBA","TBA","Fredericksburg","ON","LINE","Liss M",""
 "87891","PSYC 100","05","General Psychology","","","","HN","","3","2:00 pm-3:15 pm","TR","Fredericksburg","MERC","102","Erchull M",""
@@ -855,8 +856,8 @@ CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instruc
 "87749","PSYC 274","01","Biological Psychology","","","Y","","","3","11:00 am-12:15 pm","TR","Fredericksburg","MERC","201","Mailloux J",""
 "87940","PSYC 274","02","Biological Psychology","","","Y","","","3","12:30 pm-1:45 pm","TR","Fredericksburg","MERC","201","Staff A",""
 "86237","PSYC 305","01","Cognitive Neuroscience","","","Y","","","3","10:00 am-10:50 am","MWF","Fredericksburg","MERC","103","Stebbins H",""
-"86742","PSYC 305","02","Cognitive Neuroscience","","","Y","","","3","6:00 pm-8:45 pm","T","Fredericksburg","MERC","103","Thaxter P",""
 CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instructor/s,Additional Requirements
+"86742","PSYC 305","02","Cognitive Neuroscience","","","Y","","","3","6:00 pm-8:45 pm","T","Fredericksburg","MERC","103","Thaxter P",""
 "80470","PSYC 360A","01","Advanced Statistics for Psyc","","","Y","","","3","10:00 am-10:50 am","MWF","Fredericksburg","MERC","202","Mailloux J",""
 "80471","PSYC 360A","02","Advanced Statistics for Psyc","","","Y","","","3","11:00 am-11:50 am","MWF","Fredericksburg","MERC","202","Mailloux J",""
 "85114","PSYC 360A","03","Advanced Statistics for Psyc","","","Y","","","3","2:00 pm-3:15 pm","TR","Fredericksburg","MERC","202","Kolar D",""
@@ -877,8 +878,8 @@ CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instruc
 "86232","PSYC 491A","04","Individual Research","Y","","","","","3","TBA","TBA","Fredericksburg","TBA","TBA","Schiffrin H",""
 "86233","PSYC 491A","05","Individual Research","Y","","","","","3","TBA","TBA","Fredericksburg","TBA","TBA","Stanley E",""
 "87400","PSYC 491A","06","Individual Research","Y","","","","","3","TBA","TBA","Fredericksburg","TBA","TBA","Stebbins H",""
-"87751","PSYC 499","01","Internship","Y","","Y","CE","","1","3:30 pm-4:45 pm","TR","Fredericksburg","MERC","131","Liss M",""
 CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instructor/s,Additional Requirements
+"87751","PSYC 499","01","Internship","Y","","Y","CE","","1","3:30 pm-4:45 pm","TR","Fredericksburg","MERC","131","Liss M",""
 "86320","RELG 101","01","Intro to World Religions","","","","","","3","12:00 pm-12:50 pm","MWF","Fredericksburg","TRIN","204","Hirshberg D",""
 "87262","RELG 102","01","Intro to the Study of Religion","","","","","","3","11:00 am-11:50 am","MWF","Fredericksburg","TRIN","106A","Aminrazavi M",""
 "84454","RELG 103","01","The Abrahamic Religions","","","","","","3","2:00 pm-3:15 pm","TR","Fredericksburg","TRIN","210","Mathews M",""
@@ -899,8 +900,8 @@ CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instruc
 "83558","SAGE 000","25","Study Abroad Review-EL","","","","","","0","","","Fredericksburg","","","TBA",""
 "83560","SAGE 000","26","Study Abroad Review-EL","","","","","","0","","","Fredericksburg","","","TBA",""
 "83566","SAGE 000","27","Study Abroad Review-GI","","","","","","0","TBA","TBA","Fredericksburg","TBA","TBA","Mathews M",""
-"83567","SAGE 000","28","Study Abroad Review-GI","","","","","","0","TBA","TBA","Fredericksburg","TBA","TBA","O'Brien B",""
 CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instructor/s,Additional Requirements
+"83567","SAGE 000","28","Study Abroad Review-GI","","","","","","0","TBA","TBA","Fredericksburg","TBA","TBA","O'Brien B",""
 "83575","SAGE 000","34","Study Abroad Review-GI","","","","","","0","","","Fredericksburg","","","TBA",""
 "85266","SAGE 000","40","Study Abroad Review","","","","","","0","","","Fredericksburg","","","TBA",""
 "84906","SAGE 000","50","Study Abroad Review-EL","","","","","","0","","","Fredericksburg","","","TBA",""
@@ -921,8 +922,8 @@ CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instruc
 "80839","SOCG 471","01","History of Social Theory","","","Y","","","3","9:30 am-10:45 am","TR","Fredericksburg","MONR","213","Marsh K",""
 "87217","SOCG 471","02","History of Social Theory","","","Y","","","3","11:00 am-12:15 pm","TR","Fredericksburg","MONR","213","Marsh K",""
 "80532","SPAN 101","01","Beginning Spanish I","","","","","","3","12:00 pm-12:50 pm","MWF","Fredericksburg","CMBS","001","Staff A",""
-"80533","SPAN 101","02","Beginning Spanish I","","","","","","3","2:00 pm-2:50 pm","MWF","Fredericksburg","CMBS","003","Staff A",""
 CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instructor/s,Additional Requirements
+"80533","SPAN 101","02","Beginning Spanish I","","","","","","3","2:00 pm-2:50 pm","MWF","Fredericksburg","CMBS","003","Staff A",""
 "80534","SPAN 101","03","Beginning Spanish I","","","","","","3","6:00 pm-7:15 pm","MW","Fredericksburg","CMBS","213","Chappelle L",""
 "82901","SPAN 101","04","Beginning Spanish I","","","","","","3","6:00 pm-7:15 pm","TR","Fredericksburg","CMBS","213","Chappelle L",""
 "80538","SPAN 102","01","Beginning Spanish II","","","","","","3","8:00 am-8:50 am","MWF","Fredericksburg","CMBS","004","Orozco Watrel M",""
@@ -943,8 +944,8 @@ CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instruc
 "86152","SPAN 201A","07","Intermediate Spanish I","Y","","","HN","","3","1:00 pm-1:50 pm","MWF","Fredericksburg","CMBS","001","Delgado-Poust A","View"
 "86381","SPAN 201A","08","Intermediate Spanish I","","","","","","3","2:00 pm-2:50 pm","MWF","Fredericksburg","CMBS","001","Lang R",""
 "86959","SPAN 201A","09","Intermediate Spanish I","","","","","","3","5:00 pm-6:15 pm","MW","Fredericksburg","CMBS","215","Johnson Y",""
-"80551","SPAN 202A","01","Intermediate Spanish II","","","","","","3","9:30 am-10:45 am","TR","Fredericksburg","CMBS","214","Fajardo-Cardenas M",""
 CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instructor/s,Additional Requirements
+"80551","SPAN 202A","01","Intermediate Spanish II","","","","","","3","9:30 am-10:45 am","TR","Fredericksburg","CMBS","214","Fajardo-Cardenas M",""
 "80552","SPAN 202A","02","Intermediate Spanish II","","","","","","3","12:30 pm-1:45 pm","TR","Fredericksburg","CMBS","215","Fajardo-Cardenas M",""
 "80553","SPAN 202A","03","Intermediate Spanish II","","","","","","3","6:00 pm-7:15 pm","TR","Fredericksburg","CMBS","214","Cisneros de Schwartz A",""
 "80554","SPAN 202A","04","Intermediate Spanish II","","","","","","3","12:00 pm-12:50 pm","MWF","Fredericksburg","CMBS","213","Lang R",""
@@ -965,8 +966,8 @@ CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instruc
 "83879","SPAN 414","01","Spanish for Translation","","","Y","WI","","3","12:30 pm-1:45 pm","TR","Fredericksburg","CMBS","114","Martinez Mira M",""
 "87305","SPAN 415","01","Advanced Conversation","","","Y","SI","","3","3:30 pm-4:45 pm","TR","Fredericksburg","CMBS","213","Fajardo-Cardenas M",""
 "87878","SPAN 485M","01","Human Rights Latin Amer Lit","","","Y","","","3","9:30 am-10:45 am","TR","Fredericksburg","CMBS","211","Chichester A",""
-"86668","STAT 180","01","Introduction to Statistics","","","","CE","","3","8:00 am-9:15 am","TR","Fredericksburg","TRIN","119","Hydorn D",""
 CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instructor/s,Additional Requirements
+"86668","STAT 180","01","Introduction to Statistics","","","","CE","","3","8:00 am-9:15 am","TR","Fredericksburg","TRIN","119","Hydorn D",""
 "86669","STAT 180","02","Introduction to Statistics","","","","HN","","3","11:00 am-12:15 pm","TR","Fredericksburg","TRIN","119","Esunge J",""
 "86670","STAT 180","03","Introduction to Statistics","","","","HN","","3","12:30 pm-1:45 pm","TR","Fredericksburg","TRIN","119","Esunge J",""
 "86672","STAT 180","04","Introduction to Statistics","","","","","","3","12:00 pm-12:50 pm","MWF","Fredericksburg","TRIN","210","Perkins K",""
@@ -987,8 +988,8 @@ CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instruc
 "80867","THEA 218","01","Voice & Body Movmt","","","","","","4","1:00 pm-3:45 pm","MW","Fredericksburg","DUPN","313","Housley H",""
 "82850","THEA 242","01","Costume Construction","","","","","","3","9:30 am-10:45 am","TR","Fredericksburg","DUPN","129","McCluskey K",""
 "87675","THEA 281","01","Princ of Arts Administration","","","","","","3","10:00 am-10:50 am","MWF","Fredericksburg","DUPN","211","Stull MStaff A",""
-"87679","THEA 310","01","Fashion History","","","","","","3","1:00 pm-1:50 pm","MWF","Fredericksburg","DUPN","215","McCluskey K",""
 CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instructor/s,Additional Requirements
+"87679","THEA 310","01","Fashion History","","","","","","3","1:00 pm-1:50 pm","MWF","Fredericksburg","DUPN","215","McCluskey K",""
 "80872","THEA 321","01","Acting","","","","","","4","2:00 pm-4:45 pm","TR","Fredericksburg","DUPN","313","Brewer C",""
 "82851","THEA 331","01","Playwriting","","","","WI","","3","6:00 pm-8:45 pm","R","Fredericksburg","DUPN","324","Spotswood S",""
 "87674","THEA 335","01","Musical Theatre Performance","","","","","","3","6:00 pm-8:45 pm","M","Fredericksburg","DUPN","313","Stull MStaff A",""
@@ -996,5 +997,6 @@ CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instruc
 "80876","THEA 390","01","Theatre Practicum","","","","","","1","TBA","TBA","Fredericksburg","TBA","TBA","Stull M",""
 "87248","THEA 400","01","Professional Identity & Practi","","","","SI,WI","","1","9:30 am-10:45 am","TR","Fredericksburg","DUPN","324","Stull M",""
 "87677","THEA 434","01","Scene Design","","","","","","3","12:30 pm-1:45 pm","TR","Fredericksburg","DUPN","321","Benson M",""
+"87947","THEA 482","01","Senior Project","Y","","","","","3","TBA","TBA","Fredericksburg","TBA","TBA","Stull M",""
 "87888","WGST 101","01","Intro to Women's Studies","","","","WI","","3","12:00 pm-12:50 pm","MWF","Fredericksburg","MONR","210","Poska A",""
 "87889","WGST 101","02","Intro to Women's Studies","","","","WI","","3","2:00 pm-2:50 pm","MWF","Fredericksburg","MONR","210","Poska A",""
