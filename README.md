@@ -39,14 +39,14 @@ To start maraidb:
 
 On Windows, the installation guide can be found here:https://mariadb.com/kb/en/library/installing-mariadb-msi-packages-on-windows/
 
-### How to use this application
+## How to use this application
 
-#### First Time User
+### First Time User
 First time users should always select the "Generate New" button. This will create and populate a database with course information and professor data.
 
 Once it is done scraping banner for the course information, you will be forwarded to the main department schedule page. From here you will notice that the professor data is "null" 
 
-#### Editing Persistent Professor Information
+### Editing Persistent Professor Information
 Click the button next to the instructors to go to the edit page. 
   From here you can:
   1. Delete professors who are not in the CS Department. This will remove them from the database permanently and the department schedule    will be updated
@@ -59,17 +59,26 @@ You may click return and your edits should be visible on the main department sch
 
 ***Office Hours are not saved!***
 
-#### Downloading the Department Schedule
+### Downloading the Department Schedule
 1. Click the download button. 
 2. This will prompt you for a name and location to save the resulting png image. 
 3. From here the png could be printed or shared on Domain of One's Own
 
-#### Download Individual Professor Schedules
+### Download Individual Professor Schedules
 1. Click on "Professor Schedule"
 2. Use the dropdown menu to select the appropriate professor
 3. Click Download
 4. Steps similar to that above
 
 ### Previous User
-Click the previuos schedule button to pull up what was last saved in the database
+Click the previous schedule button to pull up what was last saved in the database
 
+## Hosting Schedules using Domain of One's Own
+1. Go to  [umw.domains](https://umw.domains/)
+2. Login using NetID and Password
+3. In the cPanel interface, scroll down to the **Files** section and select **File Manager**
+4. In the main file area, scroll down to `public_html` and double click it
+5. In the topbar, select **Upload** and drag your schedule PNG in the upload area
+6. Once uploaded, you can access the file via your site URL:
+
+For example, if my domain is http://mydomain.com and the file I uploaded is named `spring_2019_dept_sched.png` I can access the file online by going to http://mydomain.com/spring_2019_dept_sched.png and can share this link with others.
