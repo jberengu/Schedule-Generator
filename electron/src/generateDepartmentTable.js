@@ -9,14 +9,10 @@ var con = mysql.createConnection({
 let queryString1 = "select * from scheduleCSV where Instructors in (select name from professorData) and (Course like \'%CPSC%\' or Course like \'%DATA%\' or Course like \'%CYBR%\' or Course like \'%FSEM%\');";
 let queryString2 = "select * from professorData;";
 
-//con.connect(function(err) {
-  //  if (err) throw err;
     con.query(queryString1, function(err, courseData, fields) {
         if (err) throw err;
         con.query(queryString2, function(err, profData, fields) {
             if (err) throw err;
-            console.log(courseData);
-            console.log(profData);
 
             let tableHTML = '';
             tableHTML = tableHTML.concat('<thead>');
@@ -82,7 +78,6 @@ let queryString2 = "select * from professorData;";
             }
 
             document.getElementById('schedule_table').innerHTML = tableHTML;
-        //});
     });
 });
 
