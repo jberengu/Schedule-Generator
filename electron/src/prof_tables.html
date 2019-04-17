@@ -25,7 +25,7 @@
     <script>
     window.$ = window.jQuery = require('jquery');
     </script>
-    <!--<script type="text/javascript">
+    <script type="text/javascript">
     $('#Download').click(function() {
 
         const html2canvas = require("html2canvas");
@@ -51,7 +51,7 @@
             window.open(uri);
         }
     }
-    </script>-->
+    </script>
     <script type="text/javascript">
     var mysql = require('mysql');
     var con = mysql.createConnection({
@@ -62,8 +62,6 @@
     });
     var tableHTML = '';
     queryString1 = "select name from professorData;"
-    con.connect(function(err) {
-        if (err) throw err;
         con.query(queryString1, function(err, results, fields) {
             if (err) throw err;
             tableHTML = tableHTML.concat('<option value="null">- Select -</option>');
@@ -71,8 +69,7 @@
                 tableHTML = tableHTML.concat('<option value="' + results[i].name + '">' + results[i].name + '</option>');
             }
             document.getElementById('profDropDown').innerHTML = tableHTML;
-        })
-    });
+        });
     </script>
     <script type="text/javascript" src="generateProfessorTable.js"></script>
 </body>

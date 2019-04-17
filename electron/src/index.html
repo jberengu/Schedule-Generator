@@ -71,14 +71,14 @@
             });
             var queryString1= 'create database if not exists scheduleDB;';
             var queryString2= 'use scheduleDB';
-            var queryString3= 'drop table if exists scheduleCSV;'
-            var queryString4= 'create table scheduleCSV(CRN INT, Course VARCHAR(255),Sec INT,Title VARCHAR(255),POI VARCHAR(255),CO VARCHAR(255),PRE VARCHAR(255),ATR VARCHAR(255),WL VARCHAR(255),CR VARCHAR(255),TIME VARCHAR(255),Days VARCHAR(255),Campus VARCHAR(255),Bldgs VARCHAR(255),Rooms VARCHAR(255),Instructors VARCHAR(255),Additional_Requirements VARCHAR(255), PRIMARY KEY(CRN));'
-            var queryString5= 'LOAD DATA LOCAL INFILE \'./schedule.csv\' INTO TABLE scheduleCSV FIELDS TERMINATED BY \',\' ENCLOSED BY \'\"\' LINES TERMINATED BY \'\\n\' IGNORE 1 ROWS (CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldgs,Rooms,Instructors,Additional_Requirements);'
-            var queryString6= 'create table if not exists professorData (name varchar(255), phone varchar(225), office varchar(255), email varchar(225), isAdjunct int, PRIMARY KEY(name));'
-            var queryString7= 'insert ignore into professorData (name, isAdjunct) select Instructors, 0 from scheduleCSV where Course like \'%CPSC%\' or Course like \'%DATA%\' or Course like \'%CYBR%\';'
-            var queryString8= 'select * from scheduleCSV where Instructors in (select name from professorData) and (Course like \'%CPSC%\' or Course like \'%DATA%\' or Course like \'%CYBR%\' or Course like \'%FSEM%\');'
+            var queryString3= 'drop table if exists scheduleCSV;';
+            var queryString4= 'create table scheduleCSV(CRN INT, Course VARCHAR(255),Sec INT,Title VARCHAR(255),POI VARCHAR(255),CO VARCHAR(255),PRE VARCHAR(255),ATR VARCHAR(255),WL VARCHAR(255),CR VARCHAR(255),TIME VARCHAR(255),Days VARCHAR(255),Campus VARCHAR(255),Bldgs VARCHAR(255),Rooms VARCHAR(255),Instructors VARCHAR(255),Additional_Requirements VARCHAR(255), PRIMARY KEY(CRN));';
+            var queryString5= 'LOAD DATA LOCAL INFILE \'./schedule.csv\' INTO TABLE scheduleCSV FIELDS TERMINATED BY \',\' ENCLOSED BY \'\"\' LINES TERMINATED BY \'\\n\' IGNORE 1 ROWS (CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldgs,Rooms,Instructors,Additional_Requirements);';
+            var queryString6= 'create table if not exists professorData (name varchar(255), phone varchar(225), office varchar(255), email varchar(225), isAdjunct int, PRIMARY KEY(name));';
+            var queryString7= 'insert ignore into professorData (name, isAdjunct) select Instructors, 0 from scheduleCSV where Course like \'%CPSC%\' or Course like \'%DATA%\' or Course like \'%CYBR%\';';
+            var queryString8= 'select * from scheduleCSV where Instructors in (select name from professorData) and (Course like \'%CPSC%\' or Course like \'%DATA%\' or Course like \'%CYBR%\' or Course like \'%FSEM%\');';
             
-            var queryString100= 'select * from scheduleCSV;'
+            var queryString100= 'select * from scheduleCSV;';
             //creates database if it does not already exist
             connection.query(queryString1, (err, rows, fields) => {
               if(err){
