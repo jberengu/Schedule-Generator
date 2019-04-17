@@ -24,3 +24,12 @@ Once you `cd` into an electron project directory, you can install Node dependenc
 You can then run the application with:
 
 `electron-forge start`
+
+### Mariadb
+This application uses MariaDB to function.
+If on OSX, the install directions are:
+`brew update`
+`brew install mariadb`
+To start maraidb:
+`mysql.server start`
+
