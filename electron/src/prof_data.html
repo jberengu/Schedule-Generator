@@ -20,6 +20,41 @@
     </script>
     <script src="generateProfessorData.js" type="text/javascript"></script>
     <script type="text/javascript">
+        function isAdjunct(row){
+            var d = row.parentNode.parentNode.rowIndex;
+            var name = row.parentNode.parentNode.firstChild.firstChild.nodeValue;
+            var value = document.getElementById(name).value
+
+            var val;
+
+            console.log(value)
+            if (value == "No"){
+                document.getElementById(name).value = "Yes"
+                val = 1
+            }
+            else{
+                document.getElementById(name).value = "No"
+                val = 0
+            }
+
+            var mysql = require("mysql");
+            var connection = mysql.createConnection({
+                host: "localhost",
+                user: "root",
+                password: "",
+                database: "scheduleDB",
+                multiplestatements: true
+            });
+            query = mysql.format("UPDATE professorData SET isAdjunct=? where name = ?", [val, name]);
+
+            connection.query(query, function(err, result) {
+                if (err) throw err;
+                //document.getElementById('ProfessorTable').deleteRow(d);
+            });
+        }
+        
+    </script>
+    <script type="text/javascript">
     function deleteThis(row) {
         var d = row.parentNode.parentNode.rowIndex;
         var name = row.parentNode.parentNode.firstChild.firstChild.nodeValue;
@@ -65,6 +100,7 @@
                     arrayOfThisRow.push($(this).text());
                 });
 
+                arrayOfThisRow.pop()
                 arrayOfThisRow.pop()
                 arrayOfThisRow.push(arrayOfThisRow.shift());
                 table.push(arrayOfThisRow);

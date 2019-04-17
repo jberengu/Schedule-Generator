@@ -18,6 +18,7 @@ con.connect(function(err) {
         tableHTML = tableHTML.concat('<th>Phone</th>');
         tableHTML = tableHTML.concat('<th>Office</th>');
         tableHTML = tableHTML.concat('<th>Email</th>');
+        tableHTML = tableHTML.concat('<th>Adjunct?</th>');
         tableHTML = tableHTML.concat('<th>Delete Me?</th>');
         tableHTML = tableHTML.concat('</thead>');
         tableHTML = tableHTML.concat('<tbody contenteditable="true">');
@@ -28,6 +29,14 @@ con.connect(function(err) {
             tableHTML = tableHTML.concat('<td>' + profData[i].phone + '</td>');
             tableHTML = tableHTML.concat('<td>' + profData[i].office + '</td>');
             tableHTML = tableHTML.concat('<td>' + profData[i].email + '</td>');
+            let value = "";
+            if (profData[i].isAdjunct == 0){
+                value = "No"
+            }
+            else{
+                value = "Yes"
+            }
+            tableHTML = tableHTML.concat("<td><input class=isAdjunct id=" + "'" + profData[i].name +"'" + 'type=button onclick=isAdjunct(this) value=' + value + '></td>')
             tableHTML = tableHTML.concat("<td> <input class=deleteMe name=" + "'" + profData[i].name +"'" + 'type=button onclick=deleteThis(this) value=DELETE></td>')
             tableHTML = tableHTML.concat('</tr>');
         }
