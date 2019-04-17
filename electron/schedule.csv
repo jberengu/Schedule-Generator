@@ -898,7 +898,7 @@ CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instruc
 "83526","SAGE 000","22","Study Abroad Review-EL","","","","","","0","","","Fredericksburg","","","TBA",""
 "83551","SAGE 000","24","Study Abroad Review-EL","","","","","","0","","","Fredericksburg","","","TBA",""
 "83558","SAGE 000","25","Study Abroad Review-EL","","","","","","0","","","Fredericksburg","","","TBA",""
-"83560","SAGE 000","26","Study Abroad Review-EL","","","","","","0","","","Fredericksburg","","","TBA",""
+"83560","SAGE 000","26","Study Abroad Review-EL","","","","","","0","TBA","TBA","Fredericksburg","TBA","TBA","Burtis M",""
 "83566","SAGE 000","27","Study Abroad Review-GI","","","","","","0","TBA","TBA","Fredericksburg","TBA","TBA","Mathews M",""
 CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instructor/s,Additional Requirements
 "83567","SAGE 000","28","Study Abroad Review-GI","","","","","","0","TBA","TBA","Fredericksburg","TBA","TBA","O'Brien B",""
@@ -998,5 +998,6 @@ CRN,Course,Sec,Title,POI,CO,PRE,ATR,WL,CR,TIME,Days,Campus,Bldg/s,Room/s,Instruc
 "87248","THEA 400","01","Professional Identity & Practi","","","","SI,WI","","1","9:30 am-10:45 am","TR","Fredericksburg","DUPN","324","Stull M",""
 "87677","THEA 434","01","Scene Design","","","","","","3","12:30 pm-1:45 pm","TR","Fredericksburg","DUPN","321","Benson M",""
 "87947","THEA 482","01","Senior Project","Y","","","","","3","TBA","TBA","Fredericksburg","TBA","TBA","Stull M",""
+"87948","THEA 482","02","Senior Project","Y","","","","","3","TBA","TBA","Fredericksburg","TBA","TBA","Housley H",""
 "87888","WGST 101","01","Intro to Women's Studies","","","","WI","","3","12:00 pm-12:50 pm","MWF","Fredericksburg","MONR","210","Poska A",""
 "87889","WGST 101","02","Intro to Women's Studies","","","","WI","","3","2:00 pm-2:50 pm","MWF","Fredericksburg","MONR","210","Poska A",""
