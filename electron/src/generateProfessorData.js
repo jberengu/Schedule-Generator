@@ -33,8 +33,6 @@ con.connect(function(err) {
         }
 
         tableHTML = tableHTML.concat('</tbody>');
-
-        //console.log(tableHTML)
         document.getElementById('ProfessorTable').innerHTML = tableHTML;
     })
 });
