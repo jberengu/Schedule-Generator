@@ -48,6 +48,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.3",
     "electron-chromedriver": "^5.0.0-beta.1",
     "electron-compile": "^6.4.4",
     "electron-progressbar": "^1.2.0",
